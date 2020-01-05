@@ -14,8 +14,8 @@ public:
 
 
 
-	void setCouleur(string couleur) { _couleur = couleur; };
-
+	void setCouleur(const string &couleur) { _couleur = couleur; };
+	string getCouleur() { return _couleur; };
 
 
 	virtual bool dessiner(string requete) = 0;
