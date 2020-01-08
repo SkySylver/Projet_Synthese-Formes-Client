@@ -18,7 +18,7 @@ Vecteur2D::operator string() const
 {/*
 	ostringstream os;
 	os << "( " << x << ", " << y << ")";
-	return os.str();*/
+	return os.str();*/return "eee";
 }
 
 ostream & operator << (ostream & os, const Vecteur2D & u)

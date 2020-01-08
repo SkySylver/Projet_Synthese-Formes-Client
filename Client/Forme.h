@@ -18,8 +18,8 @@ public:
 	string getCouleur() { return _couleur; };
 
 
-	virtual bool dessiner(string requete) = 0;
-	virtual bool dessinerForme(string requete) = 0;
+	virtual bool dessiner(string requete) const = 0;
+	virtual bool dessinerForme(string requete) const = 0;
 
 
 	virtual Forme * Homothetie()const=0;
