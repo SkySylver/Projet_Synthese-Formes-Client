@@ -125,6 +125,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Cercle.cpp" />
+    <ClCompile Include="Connexion.cpp" />
     <ClCompile Include="Erreur.cpp" />
     <ClCompile Include="Forme.cpp" />
     <ClCompile Include="FormeComposee.cpp" />
@@ -137,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cercle.h" />
+    <ClInclude Include="Connexion.h" />
     <ClInclude Include="Erreur.h" />
     <ClInclude Include="Forme.h" />
     <ClInclude Include="FormeComposee.h" />

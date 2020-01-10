@@ -15,15 +15,14 @@ class Connexion
 {
 private:
 	int r;
-	WSADATA wsaData;        // structure contenant les données de la librairie winsock à initialiser
 	SOCKET sock;
 	SOCKADDR_IN sockaddr; // informations concernant le serveur avec lequel on va communiquer
 public:
 	Connexion();
 	~Connexion();
-	void initWinsockLib();
-	void creerSocket();
-	void creerRepresentantServeur();
+	void initWinsockLib(WSADATA wsaData);
+	void creerSocket(int familleAdresse, int typeSocket, int protocole);
+	void creerRepresentantServeur(char adresseServeur[L], short portServeur);
 	void connexionAuServeur();
 };
 
