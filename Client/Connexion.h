@@ -18,11 +18,14 @@ private:
 	SOCKET sock;
 	SOCKADDR_IN sockaddr; // informations concernant le serveur avec lequel on va communiquer
 public:
-	Connexion();
-	~Connexion();
-	void initWinsockLib(WSADATA wsaData);
+	Connexion(WSADATA & wsaData, int familleAdresse, int typeSocket, int protocole, char adresseServeur[L], short portServeur);
+
+	~Connexion() {};
+	void initWinsockLib(WSADATA & wsaData);
 	void creerSocket(int familleAdresse, int typeSocket, int protocole);
-	void creerRepresentantServeur(char adresseServeur[L], short portServeur);
-	void connexionAuServeur();
+	void lancer(char adresseServeur[L], short portServeur);
+	void requete(char * requete);
+	void arreter();
 };
+
 
