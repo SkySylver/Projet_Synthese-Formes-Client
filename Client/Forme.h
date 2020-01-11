@@ -19,7 +19,6 @@ public:
 	string getCouleur() { return _couleur; };
 
 	virtual bool dessiner(string requete) const = 0;
-	virtual bool dessinerForme(string requete) const = 0;
 
 	virtual double getAire() const = 0;
 
