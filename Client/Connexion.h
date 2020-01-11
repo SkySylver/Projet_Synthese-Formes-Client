@@ -14,9 +14,9 @@ using namespace std;
 class Connexion
 {
 private:
-	int r;
-	SOCKET sock;
-	SOCKADDR_IN sockaddr; // informations concernant le serveur avec lequel on va communiquer
+	int _r;
+	SOCKET _sock;
+	SOCKADDR_IN _sockaddr; // informations concernant le serveur avec lequel on va communiquer
 public:
 	Connexion(WSADATA & wsaData, int familleAdresse, int typeSocket, int protocole, char adresseServeur[L], short portServeur);
 
