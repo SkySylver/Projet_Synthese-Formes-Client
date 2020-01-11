@@ -17,7 +17,7 @@ public:
 
 	void setCouleur(const string &couleur) { _couleur = couleur; };
 	string getCouleur() { return _couleur; };
-
+	virtual double getAire()const = 0;
 
 	virtual bool dessiner(string requete) const = 0;
 	virtual bool dessinerForme(string requete) const = 0;
