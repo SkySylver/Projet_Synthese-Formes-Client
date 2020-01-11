@@ -1,6 +1,5 @@
 #pragma once
 #include "Forme.h"
-#include "FormeSimple.h"
 #include <vector>
 using namespace std;
 

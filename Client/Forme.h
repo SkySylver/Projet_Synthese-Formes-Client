@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <stdexcept>
+#include "Vecteur2D.h"
 
 using namespace std;
 class Forme
