@@ -7,10 +7,12 @@ using namespace std;
 class FormeComposee:public Forme
 {
 private:
-	vector<Forme> _groupes;
+	vector<Forme> _groupe;
 public:
 	FormeComposee() {}
 	FormeComposee(const Forme& f);
 	~FormeComposee() {};
+	double getAire() const;
+
 
 };
