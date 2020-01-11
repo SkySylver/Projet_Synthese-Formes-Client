@@ -10,10 +10,10 @@ int main()
 	char adresseServeur[L] = "192.168.1.100";
 	short portServeur = 6666;
 
-
-	
 	bool continuer;
+
 	Connexion co(wsaData, familleAdresse, typeSocket, protocole, adresseServeur, portServeur);
+
 	do
 	{
 		char requete[L];

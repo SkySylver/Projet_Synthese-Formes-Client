@@ -1,4 +1,5 @@
 #include "Vecteur2D.h"
+
 inline const Vecteur2D Vecteur2D::operator + (const Vecteur2D & u) const
 {
 	return Vecteur2D(x + u.x, y + u.y);

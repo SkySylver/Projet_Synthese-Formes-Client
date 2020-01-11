@@ -1,9 +1,18 @@
 #pragma once
-#include "FormeSimple.h"
-class Segment: public FormeSimple
+#include "Forme.h"
+class Segment: public Forme
 {
+private:
+	Vecteur2D _a, _b;
+
 public:
-	Segment();
-	~Segment();
+	Segment(const Vecteur2D &a, const Vecteur2D & b, const string & couleur = "black");
+	~Segment() {};
+
+	Vecteur2D getA() { return _a; };
+	Vecteur2D getB() { return _b; };
+	void setA(Vecteur2D a) { _a = a; };
+	void setB(Vecteur2D b) { _b = b; };
+
 };
 

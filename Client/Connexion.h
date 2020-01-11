@@ -27,5 +27,3 @@ public:
 	void requete(char * requete);
 	void arreter();
 };
-
-

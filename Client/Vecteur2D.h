@@ -23,7 +23,7 @@ public:
 	 * DONNEES : s respectant le format "(  nombre réel, nombre réel)"
 	 *
 	 */
-	inline Vecteur2D(const char * s);
+	//inline Vecteur2D(const char * s);
 	inline const Vecteur2D operator + (const Vecteur2D & u) const;
 	inline const Vecteur2D operator * (const double & a) const;
 	/**
@@ -35,9 +35,6 @@ public:
 
 }; // classe Vecteur2D
 
-inline const Vecteur2D operator * (const double & a, const Vecteur2D & u) { return u * a; }
-
-//------------ implémentation des fonctions inline ----------------------
-
 inline  Vecteur2D::Vecteur2D(const double & x, const double & y) : x(x), y(y) {}
 
+inline const Vecteur2D operator * (const double & a, const Vecteur2D & u) { return u * a; }
