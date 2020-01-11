@@ -5,5 +5,5 @@
 class FormeComposee:public Forme
 {
 private:
-	vector<FormeSimple> formes;
+	vector<FormeSimple> groupes;
 };
