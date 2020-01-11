@@ -9,3 +9,11 @@ FormeComposee::FormeComposee(const Forme& f) {
 		throw invalid_argument("Un groupe contient déjà cette forme");
 	}
 }
+
+double FormeComposee::getAire() const {
+	double res;
+	for (int i = 0; i < _groupes.size(); i++) {
+		res += _groupes[i].getAire();
+	}
+	return res;
+}
