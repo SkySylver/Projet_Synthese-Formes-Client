@@ -12,9 +12,8 @@ private:
 	
 public:
 
-	Forme() {};
-	~Forme() {};
-	Forme(string couleur);
+	virtual ~Forme() {};
+	Forme(string couleur= "black");
 
 	void setCouleur(const string &couleur) { _couleur = couleur; };
 	string getCouleur() { return _couleur; };
@@ -22,6 +21,7 @@ public:
 	virtual bool dessiner(string requete) const = 0;
 	virtual bool dessinerForme(string requete) const = 0;
 
+	virtual double getAire() const = 0;
 
 	virtual Forme * Homothetie()const=0;
 	virtual Forme * Translation()const=0;

@@ -9,7 +9,7 @@ public:
 	Segment(const Vecteur2D &a, const Vecteur2D & b, const string & couleur = "black");
 	~Segment() {};
 	
-    double getAire() const { return 0; }
+    double getAire() const { return 0.00; }
     
 	Vecteur2D getA() { return _a; };
 	Vecteur2D getB() { return _b; };
