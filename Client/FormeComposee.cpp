@@ -1,7 +1,7 @@
 #include "FormeComposee.h"
 
-FormeComposee::FormeComposee(const Forme& f) {
-	vector<Forme>::iterator it = find(_groupe.begin(), _groupe.end(), f);
+FormeComposee::FormeComposee(Forme * f) {
+	vector<Forme*>::iterator it = find(_groupe.begin(), _groupe.end(), f);
 	if (it != end(_groupe)) {
 		_groupe.push_back(f);
 	}
@@ -11,9 +11,9 @@ FormeComposee::FormeComposee(const Forme& f) {
 }
 
 double FormeComposee::getAire() const {
-	double res;
+	double res = 0;
 	for (int i = 0; i < _groupe.size(); i++) {
-		res += _groupe[i].getAire();
+		//res += _groupe[i].getAire();
 	}
 	return res;
 }
