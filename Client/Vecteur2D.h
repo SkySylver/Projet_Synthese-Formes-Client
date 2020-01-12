@@ -31,7 +31,29 @@ public:
 	 * */
 	inline const Vecteur2D operator - () const;
 
-		operator string() const;
+	operator string() const;
+
+	/*
+	 * Translation du Vecteur par le Vecteur v
+	 * @param v : Vecteur2D permettant la translation
+	 */
+	Vecteur2D Translation(const Vecteur2D & v)const;
+
+	/*
+	 * Homothetie du Vecteur par le Vecteur v avec rapport d'homothetie rapport
+	 * @param v: Vecteur2D
+	 * @param rapport: Rapport d'homothetie
+	 */
+	Vecteur2D Homothetie(const Vecteur2D & v, const double rapport)const;
+
+	/*
+	 *  Rotation avec pour centre v et angle angle
+	 * @param v : Vecteur2D correspondant au centre
+	 * @param angle : Angle de rotation
+	 * @return le vecteur corrrepondant à la rotation
+	 */
+	Vecteur2D Rotation(const Vecteur2D & v, const double angle)const;
+
 
 }; // classe Vecteur2D
 

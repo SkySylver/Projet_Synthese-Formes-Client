@@ -6,15 +6,24 @@ private:
 	Vecteur2D _a, _b;
 
 public:
-	Segment(const Vecteur2D &a, const Vecteur2D & b, const string & couleur = "black");
+	Segment(const Vecteur2D & a, const Vecteur2D & b, const string & couleur = "black");
 	~Segment() {};
 	
-    double getAire() const { return 0.00; }
     
 	Vecteur2D getA() { return _a; };
 	Vecteur2D getB() { return _b; };
 	void setA(Vecteur2D a) { _a = a; };
 	void setB(Vecteur2D b) { _b = b; };
+
+
+	double getAire() const { return 0.00; }
+
+	//bool dessiner(VisiteurDessin visiteur) const;
+
+
+	Forme * Translation(const Vecteur2D & v)const;
+	Forme * Homothetie(const Vecteur2D & v, const double rapport)const;
+	Forme * Rotation(const Vecteur2D & v, const double angle)const;
 
 };
 
