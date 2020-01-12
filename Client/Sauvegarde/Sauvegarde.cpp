@@ -17,6 +17,47 @@ void Sauvegarde::visiteSegment(const Segment *forme) const{
 	texte << forme->getB().x << "," << forme->getB().y << ",";
 	texte << forme->getCouleur() << "," << endl;
 
-    Sauvegarde::Ecriture(nomFichier, texte);
+    Sauvegarde::Ecriture(_sauvegarde, nomFichier, texte);
     _num++;
+}
+
+void Sauvegarde::visiteCercle(const Cercle *forme) const{
+	ostringstream nomFichier, texte;
+	nomFichier << "cercle" << _num << ".txt";
+
+	texte << "Cercle;"  << forme->getCentre().x << "," << forme->getCentre().y << ",";
+    texte << forme->getRayon() << ",";
+    texte << forme->getCouleur() << "," << endl;
+
+	Sauvegarde::Ecriture(_sauvegarde, nomFichier, texte);
+    _num++; 
+}
+
+void Sauvegarde::visiteTriangle(const Triangle *forme) const{
+	ostringstream nomFichier, texte;
+	nomFichier << "triangle" << _num << ".txt";
+
+	texte << "Triangle;"  << forme->getCentre().x << "," << forme->getCentre().y << ",";
+    texte << forme->getA().x << "," << forme->getA().y << ",";
+    texte << forme->getB().x << "," << forme->getB().y << ",";
+    texte << forme->getC().x << "," << forme->getC().y << ",";
+
+    _num++;
+}
+
+void Sauvegarde::visitePolygone(const Polygone *forme) const{/*
+	ostringstream nomFichier, texte;
+
+    A faire
+
+	Sauvegarde::Ecriture(_sauvegarde, nomFichier, texte);
+    _num++;*/
+}
+
+void Sauvegarde::visiteFormeComposee(const FormeComposee *forme) const{
+	/*
+
+    A faire
+
+    */
 }
