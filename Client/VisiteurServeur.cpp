@@ -9,8 +9,13 @@ VisiteurServeur::VisiteurServeur(char adresse[L], short port): VisiteurDessin(){
 }
 */
 
-void VisiteurServeur::visite(const Segment * s)const {
+void visite(const Segment & segm) {
 
+	string str;
+	str.append("Segment;");
+	str.append("dd");
+
+	const char * c = segm.getCouleur();
 }
 
 void VisiteurServeur::visite(const Triangle * t)const {

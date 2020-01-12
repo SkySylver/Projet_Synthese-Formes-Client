@@ -2,7 +2,6 @@
 #include "VisiteurDessin.h"
 #include "Connexion.h"
 
-class Forme;
 
 class VisiteurServeur :	public VisiteurDessin
 {

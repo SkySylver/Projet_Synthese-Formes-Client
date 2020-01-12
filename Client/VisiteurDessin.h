@@ -1,17 +1,12 @@
 #pragma once
-#include "Forme.h"
 #include "Segment.h"
 #include "Cercle.h"
 #include "Polygone.h"
 #include "FormeComposee.h"
 
-class Forme;
-
 class VisiteurDessin
 {
 public:
-	VisiteurDessin() {};
-	virtual ~VisiteurDessin() {};
 	
 	virtual void visite(const Segment * s) const = 0;
 	virtual void visite(const Cercle * c) const = 0;

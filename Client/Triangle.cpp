@@ -1,5 +1,5 @@
 #include "Triangle.h"
-
+#include "VisiteurDessin.h"
 
 Triangle::Triangle(const Vecteur2D & a, const Vecteur2D & b, const Vecteur2D & c, const string & couleur):Forme(couleur),_a(a),_b(b),_c(c) {
 

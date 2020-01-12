@@ -18,7 +18,7 @@ public:
 
 	double getAire() const { return 0.00; }
 
-	void sauvegarder(const VisiteurSauvegarde * vS)const;
+//	void sauvegarder(const VisiteurSauvegarde * vS)const;
 	virtual void dessiner(const VisiteurDessin & visiteur) const;
 
 	operator string() const;

@@ -1,4 +1,5 @@
 #include "Polygone.h"
+#include "VisiteurDessin.h"
 
 double Polygone::getAire() const {
 	int j = 0;
