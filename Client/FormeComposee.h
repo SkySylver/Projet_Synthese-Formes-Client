@@ -15,6 +15,4 @@ public:
 	void ajouterForme(Forme * f);
 	void supprimerForme(Forme * f);
 	double getAire() const;
-	void supprimerForme(Forme* f);
-	void ajouterForme(Forme* f);
 };
