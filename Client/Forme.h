@@ -9,6 +9,7 @@
 #include "VisiteurDessin.h"
 
 class VisiteurDessin;
+class VisiteurSauvegarde;
 
 class Forme {
 protected:

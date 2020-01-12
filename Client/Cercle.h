@@ -32,8 +32,8 @@ public:
 	void setRayon(double rayon) { _rayon = rayon; }; /// Redéfini le rayon du cercle
 
 
-	virtual double getAire() const { return _rayon * _rayon * PI; }; /// @return l'aire du cercle
-	virtual operator string() const; ///@ return le cercle sous forme de string
+	double getAire() const { return _rayon * _rayon * PI; }; /// @return l'aire du cercle
+	operator string() const; ///@ return le cercle sous forme de string
 
 	virtual void dessiner(const VisiteurDessin & visiteur) const;
 
@@ -42,7 +42,7 @@ public:
 	 * @param v : le vecteur2D de translation
 	 * @return la translation du cercle par le vecteur v
 	 */
-	virtual Forme * Translation(const Vecteur2D & v) const;
+	Forme * Translation(const Vecteur2D & v) const;
 
 	/**
 	 * Effectue l'homothetie du cercle avec le vecteur v et un rapport d'homothetie
@@ -50,7 +50,7 @@ public:
 	 * @param rapport : Rapport d'homothetie
 	 * @return L'homothetie du cercle
 	 */
-	virtual Forme * Homothetie(const Vecteur2D & v, const double rapport)const;
+	Forme * Homothetie(const Vecteur2D & v, const double rapport)const;
 
 	/**
 	 * Effectue la rotation du cercle avec un vecteur et un angle de rotation
@@ -58,6 +58,6 @@ public:
 	 * @param rapport : angle de rotation
 	 * @return La rotation du cercle
 	 */
-	virtual Forme * Rotation(const Vecteur2D & v, const double angle)const;
+	Forme * Rotation(const Vecteur2D & v, const double angle)const;
 };
 

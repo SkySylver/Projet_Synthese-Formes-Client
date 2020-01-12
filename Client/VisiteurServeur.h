@@ -20,6 +20,6 @@ public:
 	virtual void visite(const Segment * s) const;
 	virtual void visite(const Cercle * c) const;
 	virtual void visite(const Polygone * p) const;
-	virtual void visite(const Triangle * t) const = 0;
+	virtual void visite(const Triangle * t) const;
 	virtual void visite(const FormeComposee * f) const;
 };

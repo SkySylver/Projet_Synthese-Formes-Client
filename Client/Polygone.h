@@ -45,13 +45,13 @@ public :
 	 */
 	void retirerVecteur(Vecteur2D v);
 
-	virtual double getAire() const;
+	double getAire() const;
 
-	virtual operator string() const;
+	operator string() const;
 
-	virtual Forme * Translation(const Vecteur2D & v)const;
-	virtual Forme * Homothetie(const Vecteur2D & v, const double rapport)const;
-	virtual Forme * Rotation(const Vecteur2D & v, const double angle) const;
+	Forme * Translation(const Vecteur2D & v)const;
+	Forme * Homothetie(const Vecteur2D & v, const double rapport)const;
+	Forme * Rotation(const Vecteur2D & v, const double angle) const;
 
 	Polygone & operator + (const Vecteur2D & v);
 	Polygone & operator - (const Vecteur2D & v);
