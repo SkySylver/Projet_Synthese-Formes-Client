@@ -7,9 +7,8 @@ class VisiteurServeur :	public VisiteurDessin
 private:
 	Connexion _connexion;
 public:
-
 	VisiteurServeur(Connexion c) : VisiteurDessin(), _connexion(c) {};
-	VisiteurServeur(char adresse[L], short port);
+	//VisiteurServeur(char adresse[L], short port);
 
 	~VisiteurServeur() {};
 
@@ -20,5 +19,4 @@ public:
 	void visite(const Cercle * c) const;
 	void visite(const Polygone * c) const;
 	void visite(const FormeComposee * f) const;
-
 };

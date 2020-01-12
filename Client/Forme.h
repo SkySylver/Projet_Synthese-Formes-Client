@@ -18,7 +18,7 @@ protected:
 public:
 
 	virtual ~Forme() {};
-	Forme(string couleur = "black");
+	Forme(string couleur);
 
 	void setCouleur(const string &couleur) { _couleur = couleur; };
 	string getCouleur() { return _couleur; };
