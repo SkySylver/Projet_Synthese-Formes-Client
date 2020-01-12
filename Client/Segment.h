@@ -1,7 +1,5 @@
 #pragma once
 #include "Forme.h"
-
-
 class Segment: public Forme
 {
 private:
@@ -18,15 +16,16 @@ public:
 	void setB(Vecteur2D b) { _b = b; };
 
 
-	virtual double getAire() const { return 0.00; }
+	double getAire() const { return 0.00; }
 
-	virtual void dessiner(const VisiteurDessin & visiteur) const;
+	//bool dessiner(VisiteurDessin visiteur) const;
+	void sauvegarder(const VisiteurSauvegarde * vS)const;
 
-	virtual operator string() const;
+	operator string() const;
 
-	virtual Forme * Translation(const Vecteur2D & v)const;
-	virtual Forme * Homothetie(const Vecteur2D & v, const double rapport)const;
-	virtual Forme * Rotation(const Vecteur2D & v, const double angle)const;
+	Forme * Translation(const Vecteur2D & v)const;
+	Forme * Homothetie(const Vecteur2D & v, const double rapport)const;
+	Forme * Rotation(const Vecteur2D & v, const double angle)const;
 
 };
 
