@@ -17,5 +17,6 @@ const string Sauvegarde::visiteSegment(const Segment *forme) const{
 	texte << forme->getB().x << "," << forme->getB().y << ",";
 	texte << forme->getCouleur() << "," << endl;
 
-    return Sauvegarde::Ecriture(_sauvegarde,nomFichier, texte);
+    Sauvegarde::Ecriture(nomFichier, texte);
+    _num++;
 }
