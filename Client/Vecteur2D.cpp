@@ -16,10 +16,10 @@ inline const Vecteur2D Vecteur2D::operator - () const
 }
 
 Vecteur2D::operator string() const
-{/*
+{
 	ostringstream os;
 	os << "( " << x << ", " << y << ")";
-	return os.str();*/return "eee";
+	return os.str();
 }
 
 ostream & operator << (ostream & os, const Vecteur2D & u)

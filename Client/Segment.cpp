@@ -8,6 +8,16 @@ bool Segment::dessiner(VisiteurDessin visiteur) const {
 	return true;
 }
 */
+
+Segment::operator string() const {
+	ostringstream os;
+
+	os << "[" << _a << "," << _b <<"]";
+
+	return os.str();
+}
+
+
 Forme * Segment::Translation(const Vecteur2D & v)const {
 
 	Segment * s = new Segment(_a.Translation(v), _b.Translation(v), _couleur);

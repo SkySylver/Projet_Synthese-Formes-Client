@@ -17,8 +17,15 @@ void Triangle::setC(Vecteur2D c){
 	_c = c;
 }
 
+
+Triangle::operator string() const {
+	ostringstream os;
+	os << "["<<_a<<","<<_b<<","<<_c<<", Couleur : "<<_couleur;
+	return os.str();
+}
+
 double Triangle::getAire()const {
-	return 0.00;
+	return (double)labs((_b - _a).x * (_c - _a).y - (_b - _a).y * (_c - _a).x);
 }
 
 Forme * Triangle::Translation(const Vecteur2D & v)const {

@@ -18,6 +18,7 @@ public:
 
 	double getAire() const { return 0.00; }
 
+	operator string() const;
 	//bool dessiner(VisiteurDessin visiteur) const;
 
 

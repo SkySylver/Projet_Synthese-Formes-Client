@@ -21,6 +21,8 @@ public:
 	Vecteur2D getC() { return _c; };
 
 
+	operator string() const;
+
 	//virtual bool dessiner(VisiteurDessin visiteur) const;
 
 	virtual double getAire() const;

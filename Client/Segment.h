@@ -20,6 +20,7 @@ public:
 
 	//bool dessiner(VisiteurDessin visiteur) const;
 
+	operator string() const;
 
 	Forme * Translation(const Vecteur2D & v)const;
 	Forme * Homothetie(const Vecteur2D & v, const double rapport)const;

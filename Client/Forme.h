@@ -1,9 +1,11 @@
 #pragma once
+#include "stdio.h"
 #include <string>
 #include <stdexcept>
 #include "Vecteur2D.h"
 #include "VisiteurDessin.h"
-#include <stdbool.h>
+#include <sstream>
+#include <iostream>
 
 using namespace std;
 class Forme
@@ -22,6 +24,7 @@ public:
 	
 	//virtual bool dessiner(VisiteurDessin visiteur) const = 0;
 
+	virtual operator string() const = 0;
 	virtual double getAire() const = 0;
 
 	virtual Forme * Translation(const Vecteur2D & v)const = 0;

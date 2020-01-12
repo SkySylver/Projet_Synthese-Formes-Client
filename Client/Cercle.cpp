@@ -14,6 +14,12 @@ Forme * Cercle::Translation(const Vecteur2D & v)const {
 	return c;
 }
 
+Cercle::operator string() const {
+	ostringstream os;
+	os << "(Centre : " << _centre << "," << "Rayon : " << _rayon << ")";
+	return os.str();
+}
+
 Forme * Cercle::Homothetie(const Vecteur2D & v, const double rapport)const {
 	Cercle * c = new Cercle(_centre, _rayon.Homothetie(v, rapport), _couleur);
 	return c;

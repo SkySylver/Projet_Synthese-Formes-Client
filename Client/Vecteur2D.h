@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -60,3 +61,5 @@ public:
 inline  Vecteur2D::Vecteur2D(const double & x, const double & y) : x(x), y(y) {}
 
 inline const Vecteur2D operator * (const double & a, const Vecteur2D & u) { return u * a; }
+
+ostream & operator <<(ostream & os, const Vecteur2D &u);
