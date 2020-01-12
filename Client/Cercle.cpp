@@ -2,7 +2,7 @@
 
 
 
-Cercle::Cercle(const Vecteur2D & centre, const Vecteur2D & rayon, const string & couleur) : Forme(couleur), _centre(centre), _rayon(rayon) {}
+Cercle::Cercle(const Vecteur2D & centre, const double & rayon, const string & couleur) : Forme(couleur), _centre(centre), _rayon(rayon) {}
 /*
 bool Cercle::dessiner(VisiteurDessin visiteur) const {
 	return true;
