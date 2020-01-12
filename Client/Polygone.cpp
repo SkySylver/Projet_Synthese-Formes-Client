@@ -15,11 +15,12 @@ double Polygone::getAire() const {
 		Triangle t(_vecteurs[i], _vecteurs[j], centre, "black");
 		aire += t.getAire();
 	}
-	Triangle t(_vecteurs.begin, _vecteurs.end, centre, "black");
+	Triangle t(_vecteurs[0], _vecteurs[_vecteurs.size()], centre, "black");
 	aire += t.getAire();
 
 	return aire;
 }
+
 Polygone::operator string() const {
 
 }
