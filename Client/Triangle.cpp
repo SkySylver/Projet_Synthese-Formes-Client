@@ -25,7 +25,7 @@ Triangle::operator string() const {
 }
 
 double Triangle::getAire()const {
-	return (double)labs((_b - _a).x * (_c - _a).y - (_b - _a).y * (_c - _a).x);
+	return labs((_b - _a).x * (_c - _a).y - (_b - _a).y * (_c - _a).x);
 }
 
 Forme * Triangle::Translation(const Vecteur2D & v)const {

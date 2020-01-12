@@ -25,7 +25,6 @@ private:
 	SOCKET _sock;
 	SOCKADDR_IN _sockaddr; // informations concernant le serveur avec lequel on va communiquer
 public:
-	Connexion() {};
 	Connexion(WSADATA & wsaData, int familleAdresse, int typeSocket, int protocole, char adresseServeur[L], short portServeur);
 
 	~Connexion() {};

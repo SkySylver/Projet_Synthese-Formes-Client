@@ -16,9 +16,8 @@ protected:
 	const double PI = 3.14159265;
 
 public:
-
-	virtual ~Forme() {};
-	Forme(string couleur);
+	~Forme() {};
+	Forme(string couleur = "dark");
 
 	void setCouleur(const string &couleur) { _couleur = couleur; };
 	string getCouleur() { return _couleur; };
@@ -28,7 +27,7 @@ public:
 	virtual operator string() const = 0;
 	virtual double getAire() const = 0;
 
-	virtual Forme * Translation(const Vecteur2D & v)const = 0;
-	virtual Forme * Homothetie(const Vecteur2D & v, const double rapport)const = 0;
+	virtual Forme * Translation(const Vecteur2D & v) const = 0;
+	virtual Forme * Homothetie(const Vecteur2D & v, const double rapport) const = 0;
 	virtual Forme * Rotation(const Vecteur2D & v, const double angle) const = 0;
 };
