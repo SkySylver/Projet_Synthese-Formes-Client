@@ -3,6 +3,7 @@
 #include <string>
 #include <stdexcept>
 #include "Vecteur2D.h"
+#include "VisiteurSauvegarde.h"
 #include <sstream>
 #include <iostream>
 
