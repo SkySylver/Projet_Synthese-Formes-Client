@@ -1,26 +1,7 @@
 #include "Polygone.h"
 
 
-
-double Polygone::getAire() const {
-	int j = 0;
-	double aire = 0, xsum = 0, ysum = 0;
-	//On a besoin du centre du polygone pour faire la somme des triangles qui la composent
-	for (unsigned int i = 0; i < _vecteurs.size(); i++) {
-		xsum += _vecteurs[i].x;
-		ysum += _vecteurs[i].y;
-	}
-	Vecteur2D centre(xsum / _vecteurs.size(), ysum / _vecteurs.size());
-	for (unsigned int i = 0; i < _vecteurs.size() - 1; i++) {
-		j = i + 1;
-		Triangle t(_vecteurs[i], _vecteurs[j], centre, "black");
-		aire += t.getAire();
-	}
-	Triangle t(_vecteurs[0], _vecteurs[_vecteurs.size()], centre, "black");
-	aire += t.getAire();
-
-	return aire;
-}
+double getAire() const;
 
 
 vector<Vecteur2D> Polygone::getVecteurs() {
@@ -37,7 +18,7 @@ void Polygone::ajouterVecteur(Vecteur2D v) {
 
 void Polygone::retirerVecteur(Vecteur2D v) {
 	//vector<Vecteur2D>::iterator it = find(_vecteurs.begin(), _vecteurs.end(), v);
-	//	_vecteurs.erase(it);
+//		_vecteurs.erase(it);
 }
 
 
