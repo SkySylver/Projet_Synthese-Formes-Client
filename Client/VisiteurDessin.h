@@ -8,7 +8,6 @@
 class VisiteurDessin
 {
 public:
-
 	VisiteurDessin() {};
 	virtual ~VisiteurDessin() {};
 	
@@ -16,6 +15,5 @@ public:
 	virtual void visite(const Cercle * c) const = 0;
 	virtual void visite(const Polygone * c) const = 0;
 	virtual void visite(const FormeComposee * f) const = 0;
-
 };
 

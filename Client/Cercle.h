@@ -18,7 +18,7 @@ public:
 	void setRayon(double rayon) { _rayon = rayon; };
 
 
-	double getAire() const { return _rayon * _rayon * PI; }
+	double getAire() const { return _rayon * _rayon * PI; };
 	operator string() const;
 
 	//bool dessiner(VisiteurDessin visiteur) const;
