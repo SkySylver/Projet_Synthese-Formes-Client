@@ -11,11 +11,11 @@ class VisiteurSauvegarde
 public:
 
 	VisiteurSauvegarde(){}
-	virtual void visite(Segment* f)const = 0;
-	virtual void visite(Cercle* f)const = 0;
-	virtual void visite(Triangle* f)const = 0;
-	virtual void visite(Polygone* f)const = 0;
-	virtual void visite(FormeComposee* f)const = 0;
+	virtual void visite(const Segment* f)const = 0;
+	virtual void visite(const Cercle* f)const = 0;
+	virtual void visite(const Triangle* f)const = 0;
+	virtual void visite(const Polygone* f)const = 0;
+	virtual void visite(const FormeComposee* f)const = 0;
 
 };
 
