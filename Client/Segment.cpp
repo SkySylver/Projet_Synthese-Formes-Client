@@ -9,6 +9,10 @@ bool Segment::dessiner(VisiteurDessin visiteur) const {
 }
 */
 
+void Segment::sauvegarder(const VisiteurSauvegarde* vS)const {
+	vS->visite(this);
+}
+
 Segment::operator string() const {
 	ostringstream os;
 
