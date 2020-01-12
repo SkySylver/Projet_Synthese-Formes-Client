@@ -1,7 +1,7 @@
 #include "../Erreur.h"
 #include "Sauvegarde.h"
 
-const string Sauvegarde::Ecriture(ostringstream &nomFichier,ostringstream &texte)const{
+void Sauvegarde::Ecriture(ostringstream &nomFichier,ostringstream &texte)const{
 		ofstream file(nomFichier.str());
 		if (file.is_open())
 			file << texte.str();
@@ -9,7 +9,7 @@ const string Sauvegarde::Ecriture(ostringstream &nomFichier,ostringstream &texte
 		file.close();
 }
 
-const string Sauvegarde::visiteSegment(const Segment *forme) const{
+void Sauvegarde::visiteSegment(const Segment *forme) const{
 	ostringstream nomFichier, texte;
 	nomFichier << "segment" << _num << ".txt";
 
