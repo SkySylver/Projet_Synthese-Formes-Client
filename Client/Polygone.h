@@ -1,5 +1,6 @@
 #pragma once
 #include "Forme.h"
+#include "Triangle.h"
 #include <vector>
 
 

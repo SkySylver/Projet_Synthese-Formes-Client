@@ -2,7 +2,7 @@
 
 
 
-Cercle::Cercle(const Vecteur2D & centre, const Vecteur2D & rayon, const string & couleur) : Forme(couleur), _centre(centre), _rayon(rayon) {}
+Cercle::Cercle(const Vecteur2D & centre, const double & rayon, const string & couleur) : Forme(couleur), _centre(centre), _rayon(rayon) {}
 /*
 bool Cercle::dessiner(VisiteurDessin visiteur) const {
 	return true;
@@ -21,7 +21,7 @@ Cercle::operator string() const {
 }
 
 Forme * Cercle::Homothetie(const Vecteur2D & v, const double rapport)const {
-	Cercle * c = new Cercle(_centre, _rayon.Homothetie(v, rapport), _couleur);
+	Cercle * c = new Cercle(_centre, _rayon*rapport, _couleur);
 	return c;
 }
 
