@@ -3,7 +3,8 @@
 class Cercle: public Forme
 {
 private:
-	Vecteur2D _centre, _rayon;
+	Vecteur2D _centre;
+	double _rayon;
 
 public:
 	
@@ -11,14 +12,14 @@ public:
 	~Cercle() {};
 
 	Vecteur2D getCentre() { return _centre; };
-	Vecteur2D getRayon() { return _rayon; };
+	double getRayon() { return _rayon; };
 	void setCentre(Vecteur2D centre) { _centre = centre; };
-	void setRayon(Vecteur2D rayon) { _rayon = rayon; };
+	void setRayon(double rayon) { _rayon = rayon; };
 
 
-	double getAire() const { return 0.00; }
-
+	double getAire() const { return _rayon * _rayon * PI; }
 	operator string() const;
+
 	//bool dessiner(VisiteurDessin visiteur) const;
 
 
