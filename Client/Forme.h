@@ -23,8 +23,8 @@ public:
 	void setCouleur(const string &couleur) { _couleur = couleur; };
 	string getCouleur() { return _couleur; };
 	
-	//virtual bool dessiner(VisiteurDessin visiteur) const = 0;
-
+//	virtual void dessiner(const VisiteurDessin & visiteur) const = 0;
+	
 	virtual operator string() const = 0;
 	virtual double getAire() const = 0;
 

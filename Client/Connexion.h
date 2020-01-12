@@ -14,10 +14,19 @@ using namespace std;
 class Connexion
 {
 private:
+	WSADATA wsaData;
+	int familleAdresse = AF_INET;
+	int typeSocket = SOCK_STREAM;
+	int protocole = IPPROTO_TCP;
+	char adresseServeur[L] = "192.168.1.100";
+	short portServeur = 6666;
+
+
 	int _r;
 	SOCKET _sock;
 	SOCKADDR_IN _sockaddr; // informations concernant le serveur avec lequel on va communiquer
 public:
+	Connexion() {};
 	Connexion(WSADATA & wsaData, int familleAdresse, int typeSocket, int protocole, char adresseServeur[L], short portServeur);
 
 	~Connexion() {};

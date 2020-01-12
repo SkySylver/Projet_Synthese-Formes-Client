@@ -25,7 +25,7 @@ void FormeComposee::supprimerForme(Forme* f) {
 
 double FormeComposee::getAire() const {
 	double res = 0;
-	for (int i = 0; i < _groupe.size();i++) {
+	for (unsigned int i = 0; i < _groupe.size();i++) {
 		res += _groupe[i]->getAire();
 	}
 	return res;

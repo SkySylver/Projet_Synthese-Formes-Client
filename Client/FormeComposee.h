@@ -12,4 +12,6 @@ public:
 	FormeComposee(Forme * f);
 	~FormeComposee() {};
 	double getAire() const;
+	void supprimerForme(Forme* f);
+	void ajouterForme(Forme* f);
 };
