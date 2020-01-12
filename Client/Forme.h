@@ -13,6 +13,7 @@ class Forme
 protected:
 	string _couleur;
 	string _couleurs[6] = { "black",  "blue", "red", "green", "yellow", "cyan" };
+	const double PI = 3.14159265;
 	
 public:
 
