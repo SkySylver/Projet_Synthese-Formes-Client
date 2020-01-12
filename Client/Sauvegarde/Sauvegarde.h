@@ -1,21 +1,17 @@
 #pragma once
-#include "Forme.h"
-#include "Cercle.h"
-#include "Segment.h"
-#include "Triangle.h"
-#include "Polygone.h"
-#include "FormeComposee.h"
+#include "../VisiteurSauvegarde.h"
+using namespace std;
 
-class VisiteurSauvegarde
-{
+class Sauvegarde : public VisiteurSauvegarde{
 public:
+    int _num; //Pour nommer les fichiers, et avoir des noms différents
+	Sauvegarde() : VisiteurSauvegarde()  {}
+    void Ecriture(ostringstream &nomFichier,ostringstream &texte) const;
 
-	VisiteurSauvegarde(){}
-	virtual void visite(const Segment* f)const = 0;
-	virtual void visite(const Cercle* f)const = 0;
-	virtual void visite(const Triangle* f)const = 0;
-	virtual void visite(const Polygone* f)const = 0;
-	virtual void visite(const FormeComposee* f)const = 0;
-
+	void visite(const Cercle * forme) const;
+	void visite(const Segment * forme) const;
+	void visite(const Triangle * forme) const;
+	void visite(const Polygone * forme) const;
+	void visite(const FormeComposee * forme) const;
+	
 };
-
