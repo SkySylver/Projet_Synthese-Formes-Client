@@ -134,7 +134,6 @@
     <ClCompile Include="Segment.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Vecteur2D.cpp" />
-    <ClCompile Include="VisiteurDessin.cpp" />
     <ClCompile Include="VisiteurServeur.cpp" />
   </ItemGroup>
   <ItemGroup>

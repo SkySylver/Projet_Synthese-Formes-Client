@@ -17,6 +17,9 @@ void Triangle::setC(Vecteur2D c){
 	_c = c;
 }
 
+void Triangle::dessiner(const VisiteurDessin & visiteur) const {
+	visiteur.visite(this);
+};
 
 Triangle::operator string() const {
 	ostringstream os;

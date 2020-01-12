@@ -17,9 +17,11 @@ Segment::operator string() const {
 	return os.str();
 }
 
+void Segment::dessiner(const VisiteurDessin & visiteur) const {
+	visiteur.visite(this);
+};
 
 Forme * Segment::Translation(const Vecteur2D & v)const {
-
 	Segment * s = new Segment(_a.Translation(v), _b.Translation(v), _couleur);
 	return s;
 }

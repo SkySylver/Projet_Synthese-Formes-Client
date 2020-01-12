@@ -42,9 +42,6 @@
     <ClCompile Include="Forme.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="VisiteurDessin.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="Polygone.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>

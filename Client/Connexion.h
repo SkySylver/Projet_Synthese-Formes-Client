@@ -1,9 +1,9 @@
 #pragma once
-#include <winsock2.h>
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <string.h>
+#include <winsock2.h>
 
 #pragma comment(lib, "ws2_32.lib") // spécifique à VISUAL C++
 
@@ -14,7 +14,7 @@ using namespace std;
 class Connexion
 {
 private:
-	WSADATA _wsaData;
+	WSAData _wsaData;
 	int _familleAdresse = AF_INET;
 	int _typeSocket = SOCK_STREAM;
 	int _protocole = IPPROTO_TCP;

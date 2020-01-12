@@ -5,6 +5,7 @@
 #include "Vecteur2D.h"
 #include <sstream>
 #include <iostream>
+#include "VisiteurDessin.h"
 
 class VisiteurDessin;
 
@@ -15,13 +16,15 @@ protected:
 	const double PI = 3.14159265;
 
 public:
+	Forme() {};
 	~Forme() {};
 	Forme(string couleur = "dark");
 
 	void setCouleur(const string &couleur) { _couleur = couleur; };
 	string getCouleur() { return _couleur; };
 
-	//	virtual void dessiner(const VisiteurDessin & visiteur) const = 0;
+	virtual void dessiner(const VisiteurDessin & visiteur) const= 0;
+//	Forme * clone(const Forme & f) const;
 
 	virtual operator string() const = 0;
 	virtual double getAire() const = 0;

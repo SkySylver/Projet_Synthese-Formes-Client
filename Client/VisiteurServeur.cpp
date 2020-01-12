@@ -8,7 +8,12 @@ VisiteurServeur::VisiteurServeur(char adresse[L], short port): VisiteurDessin(){
 	_connexion = co;
 }
 */
-void VisiteurServeur::visite(const Segment * v)const {
+
+void VisiteurServeur::visite(const Segment * s)const {
+
+}
+
+void VisiteurServeur::visite(const Triangle * t)const {
 
 }
 
@@ -16,7 +21,7 @@ void VisiteurServeur::visite(const Cercle * c) const{
 
 }
 
-void VisiteurServeur::visite(const Polygone * c) const{
+void VisiteurServeur::visite(const Polygone * p) const{
 
 }
 

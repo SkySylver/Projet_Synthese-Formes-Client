@@ -21,6 +21,9 @@ double Polygone::getAire() const {
 	return aire;
 }
 
+void Polygone::dessiner(const VisiteurDessin & visiteur) const {
+	visiteur.visite(this);
+};
 
 vector<Vecteur2D> Polygone::getVecteurs() {
 	return _vecteurs;

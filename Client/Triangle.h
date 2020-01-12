@@ -21,16 +21,16 @@ public:
 	Vecteur2D getC() { return _c; };
 
 
-	operator string() const;
+	virtual operator string() const;
 
-	//virtual bool dessiner(VisiteurDessin visiteur) const;
+	virtual void dessiner(const VisiteurDessin & visiteur) const;
 
 	virtual double getAire() const;
 
 
-	Forme * Translation(const Vecteur2D & v)const;
-	Forme * Homothetie(const Vecteur2D & v, const double rapport)const;
-	Forme * Rotation(const Vecteur2D & v, const double angle)const;
+	virtual Forme * Translation(const Vecteur2D & v)const;
+	virtual Forme * Homothetie(const Vecteur2D & v, const double rapport)const;
+	virtual Forme * Rotation(const Vecteur2D & v, const double angle)const;
 
 
 
