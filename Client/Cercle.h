@@ -8,7 +8,7 @@ private:
 
 public:
 	
-	Cercle(const Vecteur2D & centre, const Vecteur2D & rayon, const string & couleur);
+	Cercle(const Vecteur2D & centre, const double & rayon, const string & couleur);
 	~Cercle() {};
 
 	Vecteur2D getCentre() { return _centre; };
