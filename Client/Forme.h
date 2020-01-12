@@ -3,13 +3,12 @@
 #include <string>
 #include <stdexcept>
 #include "Vecteur2D.h"
-#include "VisiteurDessin.h"
 #include <sstream>
 #include <iostream>
 
-using namespace std;
-class Forme
-{
+class VisiteurDessin;
+
+class Forme {
 protected:
 	string _couleur;
 	string _couleurs[6] = { "black",  "blue", "red", "green", "yellow", "cyan" };
@@ -30,4 +29,5 @@ public:
 	virtual Forme * Translation(const Vecteur2D & v) const = 0;
 	virtual Forme * Homothetie(const Vecteur2D & v, const double rapport) const = 0;
 	virtual Forme * Rotation(const Vecteur2D & v, const double angle) const = 0;
+
 };
