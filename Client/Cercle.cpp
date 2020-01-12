@@ -21,7 +21,7 @@ Cercle::operator string() const {
 }
 
 Forme * Cercle::Homothetie(const Vecteur2D & v, const double rapport)const {
-	Cercle * c = new Cercle(_centre, _rayon.Homothetie(v, rapport), _couleur);
+	Cercle * c = new Cercle(_centre, _rayon*rapport, _couleur);
 	return c;
 }
 
