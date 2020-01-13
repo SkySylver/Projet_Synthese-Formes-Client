@@ -1,6 +1,9 @@
 #pragma once
 #include "Forme.h"
 
+/**
+ * Classe Cercle
+ */
 class Cercle: public Forme
 {
 
@@ -49,7 +52,8 @@ public:
 	double getAire() const { return _rayon * _rayon * PI; };
 
 	/**
-	 * @return le cercle sous forme de string
+	 * Opérateur de conversion en string
+	 * @return le cercle au format string
 	 */
 	operator string() const;
 

@@ -1,4 +1,8 @@
 #pragma once
+/**
+ * Classe Vecteur2D
+ */
+
 #include <stdio.h>
 #include <iostream>
 #include <string>
@@ -32,6 +36,10 @@ public:
 	 * */
 	inline const Vecteur2D operator - () const;
 
+	/**
+	 * Opérateur de conversion en string
+	 * @return le Vecteur2D au format string
+	 */
 	operator string() const;
 
 	/*

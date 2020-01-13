@@ -1,4 +1,9 @@
 #pragma once
+
+/**
+ * Classe Forme
+ */
+
 #include "stdio.h"
 #include <string>
 #include <stdexcept>
@@ -31,47 +36,49 @@ public:
 	void setCouleur(const string &couleur) { _couleur = couleur; };
 
 	/**
-	 * @return couleur de la forme
+	 * @return couleur de la Forme
 	 */
 	string getCouleur() const { return _couleur; };
 
 	/**
-	 * Dessine en fonctione du visiteur
-	 * @param visiteur
+	 * Dessine en fonction du visiteurDessin (Serveur, Librairie graphique, etc...)
+	 * @param visiteur : Visiteur
 	 */
 	virtual void dessiner(const VisiteurDessin & visiteur) const= 0;
+
 	//Forme * clone(const Forme & f) const;
 
-	/**
-	 * @return le cercle sous forme de string
-	 */
+	 /**
+	  * Opérateur de conversion en string
+	  * @return la Forme au format string
+	  */
 	virtual operator string() const = 0;
 
 	/**
-	 * @return l'aire du cercle
+	 * @return l'aire de la Forme
 	 */
 	virtual double getAire() const = 0;
 
 	/**
-	 * Retourne la translation du cercle par le vecteur v
+	 * Retourne la translation de la Forme par le vecteur v
 	 * @param v : le vecteur2D de translation
-	 * @return la translation du cercle par le vecteur v
+	 * @return la translation de la Forme par le vecteur v
 	 */
 	virtual Forme * Translation(const Vecteur2D & v) const = 0;
 
 	/**
-	 * Effectue l'homothetie du cercle avec le vecteur v et un rapport d'homothetie
+	 * Effectue l'homothetie de la Forme avec le vecteur v et un rapport d'homothetie
 	 * @param v : Vecteur utilisé pour l'homothetie
 	 * @param rapport : Rapport d'homothetie
-	 * @return L'homothetie du cercle
+	 * @return L'homothetie de la Forme
 	 */
 	virtual Forme * Homothetie(const Vecteur2D & v, const double rapport) const = 0;
 	
 	/**
-	 * Effectue la rotation du cercle avec un vecteur et un angle de rotation
+	 * Effectue la rotation de la Forme avec un vecteur et un angle de rotation
 	 * @param v : Centre de la rotation
 	 * @param rapport : angle de rotation
-	 * @return La rotation du cercle
+	 * @return La rotation de la Forme
 	 */
 	virtual Forme * Rotation(const Vecteur2D & v, const double angle) const = 0;
 

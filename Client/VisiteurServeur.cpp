@@ -1,13 +1,10 @@
 #include "VisiteurServeur.h"
 
-/*
+
 VisiteurServeur::VisiteurServeur(char adresse[L], short port): VisiteurDessin(){
-
-	bool continuer;
-
-	_connexion = co;
+	Connexion _connexion(adresse, port);
 }
-*/
+
 
 void VisiteurServeur::visite(const Segment * s)const {
 

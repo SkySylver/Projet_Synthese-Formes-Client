@@ -1,4 +1,8 @@
 #pragma once
+/**
+ * Classe Connexion
+ */
+
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -9,7 +13,7 @@
 
 using namespace std;
 
-#define L 200 // longueur max d'une chaîne de caractères
+#define L 200 /// longueur max d'une chaîne de caractères
 
 class Connexion
 {
@@ -24,6 +28,8 @@ private:
 	SOCKET _sock;
 	SOCKADDR_IN _sockaddr; // informations concernant le serveur avec lequel on va communiquer
 public:
+	Connexion() {};
+
 	/**
 	 * Constructeur par défaut
 	 */
