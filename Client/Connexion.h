@@ -18,7 +18,6 @@ using namespace std;
 class Connexion
 {
 private:
-	WSAData _wsaData;
 	int _familleAdresse = AF_INET;
 	int _typeSocket = SOCK_STREAM;
 	int _protocole = IPPROTO_TCP;
@@ -39,7 +38,7 @@ public:
 	 * Constructeur avec paramétrage spécifique
 	 *
 	 */
-	Connexion(WSADATA & wsaData, int familleAdresse, int typeSocket, int protocole, char adresseServeur[L], short portServeur);
+	Connexion(int familleAdresse, int typeSocket, int protocole, char adresseServeur[L], short portServeur);
 
 	/**
 	 * Destructeur
@@ -49,8 +48,8 @@ public:
 	/**
 	 * Initialise la librairie winsock
 	 *
-	 */
-	void initWinsockLib(WSADATA & wsaData);
+	 *
+	void initWinsockLib(WSADATA & wsaData);*/
 	
 	/**
 	 * Creer un socket pour ce client
@@ -72,7 +71,7 @@ public:
 	 * Envoie une requete au serveur
 	 * @param requete : Requete a envoyer
 	 */
-	void requete(const char * requete) const;
+	void requete(const char * requete)const;
 
 
 	/*

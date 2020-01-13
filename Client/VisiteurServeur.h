@@ -29,7 +29,9 @@ public:
 	/**
 	 * Destructeur par défaut
 	 */
-	~VisiteurServeur() {};
+	~VisiteurServeur() {
+		_connexion.arreter();
+	};
 
 	/**
 	 * Redéfinie la connexion du VisiteurServeur
@@ -46,29 +48,29 @@ public:
 	 * Visiteur pour le dessin d'un segment
 	 * @param s : Segment à visiter
 	 */
-	virtual void visite(const Segment * s) const;
+	virtual void visite(const Segment * s)const;
 
 	/**
 	 * Visiteur pour le dessin d'un Cercle
 	 * @param c : Cercle à visiter
 	 */
-	virtual void visite(const Cercle * c) const;
+	virtual void visite(const Cercle * c)const;
 
 	/**
 	 * Visiteur pour le dessin d'un Polygone
 	 * @param p : Polygone à visiter
 	 */
-	virtual void visite(const Polygone * p) const;
+	virtual void visite(const Polygone * p)const;
 
 	/**
 	 * Visiteur pour le dessin d'un Triangle
 	 * @param t : Triangle à visiter
 	 */
-	virtual void visite(const Triangle * t) const;
+	virtual void visite(const Triangle * t)const;
 	
 	/**
 	 * Visiteur pour le dessin d'une FormeComposee
 	 * @param f : FormeComposee à visiter
 	 */
-	virtual void visite(const FormeComposee * f) const;
+	virtual void visite(const FormeComposee * f)const;
 };

@@ -1,23 +1,24 @@
 #include "Connexion.h"
 #include "Erreur.h"
+#include "stdio.h"
 
 //#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #pragma warning(disable:4996)
 
 
 Connexion::Connexion(char adresseServeur[L], short portServeur) {
-	initWinsockLib(_wsaData);
 	creerSocket(_familleAdresse, _typeSocket, _protocole);
 	lancer(adresseServeur, portServeur);
+	int i = 3;
 }
 
 
-Connexion::Connexion(WSADATA &wsaData, int familleAdresse, int typeSocket, int protocole, char adresseServeur[L], short portServeur):_wsaData(wsaData), _familleAdresse(familleAdresse), _typeSocket(typeSocket), _protocole(protocole) {
-	initWinsockLib(wsaData);
+Connexion::Connexion(int familleAdresse, int typeSocket, int protocole, char adresseServeur[L], short portServeur): _familleAdresse(familleAdresse), _typeSocket(typeSocket), _protocole(protocole) {
+	//initWinsockLib(wsaData);
 	creerSocket(familleAdresse, typeSocket, protocole);
 	lancer(adresseServeur, portServeur);
 }
-
+/*
 void Connexion::initWinsockLib(WSADATA & wsaData) {
 
 	int _r;
@@ -25,7 +26,7 @@ void Connexion::initWinsockLib(WSADATA & wsaData) {
 
 	if (_r) throw Erreur("L'initialisation a échoué");
 }
-
+*/
 
 void Connexion::creerSocket(int familleAdresse, int typeSocket, int protocole) {
 	_sock = socket(familleAdresse, typeSocket, protocole);
@@ -46,20 +47,23 @@ void Connexion::lancer(char adresseServeur[L], short portServeur) {
 
 
 	int _r = connect(_sock, (SOCKADDR *)&_sockaddr, sizeof(sockaddr));     // renvoie une valeur non nulle en cas d'échec.
-																			// Le code d'erreur peut être obtenu par un appel à WSAGetLastError()
-	if (_r == SOCKET_ERROR) throw Erreur("La connexion a échoué");
+	cout << SOCKET_ERROR << " r = " << _r;												// Le code d'erreur peut être obtenu par un appel à WSAGetLastError()
+	if (_r == SOCKET_ERROR) {
+		throw Erreur("La connexion a échoué");
+	}
 }
 
 
-void Connexion::requete(const char * requete) const {
+void Connexion::requete(const char * requete)const {
 
 	int l = strlen(requete);
 
-
 	int _r = send(_sock, requete, l, 0);             //------------------ envoi de la requête au serveur -------------------------------
 												// envoie au plus  l octets
-	if (_r == SOCKET_ERROR)
+	if (_r == SOCKET_ERROR) {
+		cout << "Erreur";
 		throw Erreur("échec de l'envoi de la requête");
+	}
 }
 
 void Connexion::arreter() {
@@ -72,6 +76,5 @@ void Connexion::arreter() {
 	_r = closesocket(_sock);                          // renvoie une valeur non nulle en cas d'échec. Le code d'erreur peut être obtenu par un appel à WSAGetLastError()
 	if (_r) throw Erreur("La fermeture du socket a échoué");
 
-	WSACleanup();
 	cout << "Arrêt du client" << endl;
 }
