@@ -27,7 +27,7 @@ public :
 	/**
 	 *@return La liste des points
 	 */
-	vector<Vecteur2D> getVecteurs();
+	vector<Vecteur2D> getVecteurs() const;
 	
 	/**
 	 * @param v : Nouvelle liste de vecteurs

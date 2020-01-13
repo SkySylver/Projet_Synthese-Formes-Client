@@ -30,3 +30,42 @@ double FormeComposee::getAire() const {
 	}
 	return res;
 }
+
+void FormeComposee::dessiner(const VisiteurDessin & visiteur) const {
+
+	for (unsigned int i = 0; i < _groupe.size(); i++) {
+		_groupe[i]->dessiner(visiteur);
+	}
+}
+
+FormeComposee::operator string() const {
+	string str;
+	for (unsigned int i = 0; i < _groupe.size(); i++) {
+//		str << (string)_groupe[i];
+	}
+	return str;
+}
+
+Forme * FormeComposee::Translation(const Vecteur2D & v)const {
+	FormeComposee *vt = new FormeComposee();
+	for (unsigned int i = 0; i < _groupe.size(); i++) {
+		vt->ajouterForme(_groupe[i]->Translation(v));
+	}
+	return vt;
+}
+
+Forme * FormeComposee::Homothetie(const Vecteur2D & v, const double rapport)const {
+	FormeComposee *vt = new FormeComposee();
+	for (unsigned int i = 0; i < _groupe.size(); i++) {
+		vt->ajouterForme(_groupe[i]->Homothetie(v, rapport));
+	}
+	return vt;
+}
+
+Forme * FormeComposee::Rotation(const Vecteur2D & v, const double angle)const {
+	FormeComposee *vt = new FormeComposee();
+	for (unsigned int i = 0; i < _groupe.size(); i++) {
+		vt->ajouterForme(_groupe[i]->Rotation(v, angle));
+	}
+	return vt;
+}

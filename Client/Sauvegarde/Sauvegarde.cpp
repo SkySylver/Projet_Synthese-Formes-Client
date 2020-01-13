@@ -1,6 +1,6 @@
 #include "../Erreur.h"
 #include "Sauvegarde.h"
-
+/*
 void Sauvegarde::Ecriture(ostringstream &nomFichier,ostringstream &texte)const{
 		ofstream file(nomFichier.str());
 		if (file.is_open())
@@ -9,7 +9,7 @@ void Sauvegarde::Ecriture(ostringstream &nomFichier,ostringstream &texte)const{
 		file.close();
 }
 
-void Sauvegarde::visiteSegment(const Segment *forme) const{
+void Sauvegarde::visite(const Segment *forme) const{
 	ostringstream nomFichier, texte;
 	nomFichier << "segment" << _num << ".txt";
 
@@ -21,7 +21,7 @@ void Sauvegarde::visiteSegment(const Segment *forme) const{
     _num++;
 }
 
-void Sauvegarde::visiteCercle(const Cercle *forme) const{
+void Sauvegarde::visite(const Cercle *forme) const{
 	ostringstream nomFichier, texte;
 	nomFichier << "cercle" << _num << ".txt";
 
@@ -33,7 +33,7 @@ void Sauvegarde::visiteCercle(const Cercle *forme) const{
     _num++; 
 }
 
-void Sauvegarde::visiteTriangle(const Triangle *forme) const{
+void Sauvegarde::visite(const Triangle *forme) const{
 	ostringstream nomFichier, texte;
 	nomFichier << "triangle" << _num << ".txt";
 
@@ -45,16 +45,16 @@ void Sauvegarde::visiteTriangle(const Triangle *forme) const{
     _num++;
 }
 
-void Sauvegarde::visitePolygone(const Polygone *forme) const{/*
+void Sauvegarde::visite(const Polygone *forme) const{/*
 	ostringstream nomFichier, texte;
 
     A faire
 
 	Sauvegarde::Ecriture(_sauvegarde, nomFichier, texte);
-    _num++;*/
+    _num++;
 }
-
-void Sauvegarde::visiteFormeComposee(const FormeComposee *forme) const{
+*/
+void Sauvegarde::visite(const FormeComposee *forme) const{
 	/*
 
     A faire

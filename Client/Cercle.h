@@ -9,7 +9,6 @@ private:
 	double _rayon; ///Rayon du cercle
 
 public:
-
 	/**
 	 * Constructeur d'un cercle
 	 * @param centre : Centre du cercle
@@ -23,18 +22,42 @@ public:
 	 */
 	~Cercle() {};
 
+	/**
+	 * @return Le centre du cercle
+	 */
+	Vecteur2D getCentre()const { return _centre; };
 
-	Vecteur2D getCentre() { return _centre; };/// @return Le centre du cercle
-	double getRayon() { return _rayon; }; ///@return Le rayon du cercle
+	/**
+	 * @return Le rayon du cercle
+	 */
+	double getRayon()const { return _rayon; }; ///@return Le rayon du cercle
 
 
+	/**
+	 * @param centre : Nouveau centre du cercle
+	 */
 	void setCentre(Vecteur2D centre) { _centre = centre; }; ///Redéfini le centre du cercle
-	void setRayon(double rayon) { _rayon = rayon; }; /// Redéfini le rayon du cercle
+
+	/**
+	 * @param rayon : Redéfini le rayon du cercle
+	 */
+	void setRayon(double rayon) { _rayon = rayon; };
+
+	/**
+	 * @return l'aire du cercle
+	 */
+	double getAire() const { return _rayon * _rayon * PI; };
+
+	/**
+	 * @return le cercle sous forme de string
+	 */
+	operator string() const;
 
 
-	double getAire() const { return _rayon * _rayon * PI; }; /// @return l'aire du cercle
-	operator string() const; ///@ return le cercle sous forme de string
-
+	/**
+	 * Dessine en fonctione du visiteur
+	 * @param visiteur
+	 */
 	virtual void dessiner(const VisiteurDessin & visiteur) const;
 
 	/**

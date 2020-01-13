@@ -16,9 +16,9 @@ public:
 	void setB(Vecteur2D b);
 	void setC(Vecteur2D c);
 
-	Vecteur2D getA() { return _a; };
-	Vecteur2D getB() { return _b; };
-	Vecteur2D getC() { return _c; };
+	Vecteur2D getA()const { return _a; };
+	Vecteur2D getB()const { return _b; };
+	Vecteur2D getC()const { return _c; };
 
 
 	operator string() const;

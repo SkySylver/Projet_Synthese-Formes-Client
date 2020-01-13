@@ -10,8 +10,8 @@ public:
 	~Segment() {};
 	
     
-	Vecteur2D getA() { return _a; };
-	Vecteur2D getB() { return _b; };
+	Vecteur2D getA()const { return _a; };
+	Vecteur2D getB()const { return _b; };
 	void setA(Vecteur2D a) { _a = a; };
 	void setB(Vecteur2D b) { _b = b; };
 

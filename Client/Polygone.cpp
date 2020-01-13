@@ -26,7 +26,7 @@ void Polygone::dessiner(const VisiteurDessin & visiteur) const {
 	visiteur.visite(this);
 };
 
-vector<Vecteur2D> Polygone::getVecteurs() {
+vector<Vecteur2D> Polygone::getVecteurs() const {
 	return _vecteurs;
 }
 

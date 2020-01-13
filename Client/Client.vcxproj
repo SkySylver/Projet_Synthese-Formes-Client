@@ -131,6 +131,7 @@
     <ClCompile Include="FormeComposee.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Polygone.cpp" />
+    <ClCompile Include="Sauvegarde\Sauvegarde.cpp" />
     <ClCompile Include="Segment.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Vecteur2D.cpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="Forme.h" />
     <ClInclude Include="FormeComposee.h" />
     <ClInclude Include="Polygone.h" />
+    <ClInclude Include="Sauvegarde\Sauvegarde.h" />
     <ClInclude Include="Segment.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="Vecteur2D.h" />
