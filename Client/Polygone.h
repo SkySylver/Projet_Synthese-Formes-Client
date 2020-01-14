@@ -18,7 +18,7 @@ public :
 	 * @param v : Liste des vecteurs correspondant à la forme
 	 * @param couleuur : couleur de la forme
 	 */
-	Polygone(const vector<Vecteur2D> & v, string couleur): Forme(couleur), _vecteurs(v){}
+	Polygone(const vector<Vecteur2D> & v, string couleur="black"): Forme(couleur), _vecteurs(v){}
 	
 	/**
 	 * Destructeur

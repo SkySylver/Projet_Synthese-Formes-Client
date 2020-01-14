@@ -43,13 +43,13 @@ public:
 	/**
 	 * Destructeur
 	 */
-	~Connexion() {};
+	void arreter();
 
 	/**
 	 * Initialise la librairie winsock
 	 *
-	 *
-	void initWinsockLib(WSADATA & wsaData);*/
+	 */
+	void initWinsockLib(WSADATA & wsaData);
 	
 	/**
 	 * Creer un socket pour ce client
@@ -71,11 +71,10 @@ public:
 	 * Envoie une requete au serveur
 	 * @param requete : Requete a envoyer
 	 */
-	void requete(const char * requete)const;
+	void requete(string requete)const;
 
-
-	/*
-	 * Arrete la connexion
+	/**
+	 * Utilise pour la creation de Fenetre (S'utilise uniquement une fois dans le constructeur)
 	 */
-	void arreter();
+	void Fenetre();
 };

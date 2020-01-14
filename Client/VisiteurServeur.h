@@ -29,9 +29,7 @@ public:
 	/**
 	 * Destructeur par défaut
 	 */
-	~VisiteurServeur() {
-		_connexion.arreter();
-	};
+	~VisiteurServeur() {};
 
 	/**
 	 * Redéfinie la connexion du VisiteurServeur

@@ -8,14 +8,13 @@ VisiteurServeur::VisiteurServeur(char adresse[L], short port): VisiteurDessin(){
 
 void VisiteurServeur::visite(const Segment * s)const {
 	ostringstream os;
-
 	os << "Segment;" << s->getCouleur() <<"," <<s->getA().x << "," << s->getA().y <<"," << s->getB().x << "," << s->getB().y;
 	_connexion.requete(os.str().c_str());
 }
 
 void VisiteurServeur::visite(const Triangle * t)const {
 	ostringstream os;
-	os << "Triangle;" << t->getCouleur() << "," << t->getA().x << "," << t->getA().y << t->getB().x << "," << t->getB().y << t->getC().x << "," << t->getC().y;
+	os << "Triangle;" << t->getCouleur() << "," << t->getA().x << "," << t->getA().y << "," << t->getB().x << "," << t->getB().y << "," << t->getC().x << "," << t->getC().y;
 	_connexion.requete(os.str().c_str());
 }
 

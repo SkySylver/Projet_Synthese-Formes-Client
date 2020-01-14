@@ -19,29 +19,38 @@ int main()
 		int typeSocket = SOCK_STREAM;
 		int protocole = IPPROTO_TCP;
 		*/
-	char adresseServeur[L] = "192.168.1.100";
+	char adresseServeur[L] = "10.11.85.253";
 	short portServeur = 6666;
 
 
-	Vecteur2D a(1, 1);
-	Vecteur2D b(2, 2);
-	Vecteur2D c(3, 3);
+	Vecteur2D a(100, 100);
+	Vecteur2D b(200, 200);
+	Vecteur2D c(100,200);
 	Vecteur2D d(4, 4);
 	
-//	Connexion Co(adresseServeur, portServeur);
-
-//	Co.requete("Segment;blue,10,10,10,10");
+	//Connexion Co(adresseServeur, portServeur);
 
 	VisiteurServeur V(adresseServeur, portServeur);
 
-	Segment G(a, b);
-	G.dessiner(V);
+	vector<Vecteur2D> v;
+	v.push_back(a);
+	v.push_back(b);
+	v.push_back(c);
+	v.push_back(d);
+
+	Segment G(a, b, "blue");
+	Triangle T(a, b, c, "blue");
+	Cercle C(c, 150.00, "blue");
+	Polygone P(v, "blue");
+	//	Segment G(a, b, "blue");
+//	Segment G(a, b, "blue");
+	P.dessiner(V);
+
+//	Co.requete("Segment;blue,10,10,100,100");
+//	Co.requete("Cercle;blue,10,10,100,100");
+	//Co.requete("Polygone;black,100,100,100,200,300,300,400,300,500,500");
 
 
-	WSACleanup();
-
-	system("PAUSE");
-
-
+	getchar();
 	return 0;
 }
