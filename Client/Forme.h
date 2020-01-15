@@ -12,6 +12,7 @@
 #include <iostream>
 
 class VisiteurDessin;
+class VisiteurSauvegarde;
 
 class Forme {
 protected:
@@ -28,7 +29,7 @@ public:
 	/**
 	 * Constructeur avec couleur
 	 */
-	Forme(string couleur = "dark");
+	Forme(string couleur = "black");
 
 	/**
 	 * @param couleur : Nouvelle couleur

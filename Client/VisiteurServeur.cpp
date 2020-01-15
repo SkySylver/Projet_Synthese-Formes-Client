@@ -29,7 +29,7 @@ void VisiteurServeur::visite(const Polygone * p)const {
 	ostringstream os;
 	os << "Polygone;" << p->getCouleur();
 	vector<Vecteur2D> v = p->getVecteurs();
-	for (unsigned int i = 0; i <= v.size(); i++) os << "," << v.at(i).x << "," << v.at(i).y;
+	for (unsigned int i = 0; i < v.size(); i++) os << "," << v.at(i).x << "," << v.at(i).y;
 
 	_connexion.requete(os.str().c_str());
 }
@@ -37,7 +37,7 @@ void VisiteurServeur::visite(const Polygone * p)const {
 void VisiteurServeur::visite(const FormeComposee * f)const {
 	ostringstream os;
 	vector<Forme*> v = f->getGroupe();
-	for (unsigned int i = 0; i <= v.size(); i++) {
-		v.at(i)->dessiner(*this);
+	for (unsigned int i = 0; i < v.size(); i++) {
+		v[i]->dessiner(*this);
 	}
 }

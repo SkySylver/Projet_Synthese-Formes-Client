@@ -51,7 +51,7 @@
     <ClCompile Include="VisiteurSauvegarde.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Sauvegarde\Sauvegarde.cpp">
+    <ClCompile Include="Sauvegarde.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,7 +92,7 @@
     <ClInclude Include="VisiteurSauvegarde.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Sauvegarde\Sauvegarde.h">
+    <ClInclude Include="Sauvegarde.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

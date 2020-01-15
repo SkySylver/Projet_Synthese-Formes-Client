@@ -25,8 +25,8 @@ int main()
 
 	Vecteur2D a(100, 100);
 	Vecteur2D b(200, 200);
-	Vecteur2D c(100,200);
-	Vecteur2D d(4, 4);
+	Vecteur2D c(200,200);
+	Vecteur2D d(200, 4);
 	
 	//Connexion Co(adresseServeur, portServeur);
 
@@ -38,13 +38,16 @@ int main()
 	v.push_back(c);
 	v.push_back(d);
 
-	Segment G(a, b, "blue");
+	Segment G(a, b, "red");
 	Triangle T(a, b, c, "blue");
 	Cercle C(c, 150.00, "blue");
 	Polygone P(v, "blue");
 	//	Segment G(a, b, "blue");
 //	Segment G(a, b, "blue");
-	P.dessiner(V);
+	//P.dessiner(V);
+	FormeComposee fc;
+	fc.ajouterForme(&G);
+	fc.dessiner(V);
 
 //	Co.requete("Segment;blue,10,10,100,100");
 //	Co.requete("Cercle;blue,10,10,100,100");

@@ -20,7 +20,7 @@ public:
 	FormeComposee() {};
 	
 	/**
-	 * Constructeur par avec formes
+	 * Constructeur avec formes
 	 */
 	FormeComposee(Forme * f);
 

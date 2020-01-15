@@ -1,4 +1,5 @@
 #include "FormeComposee.h"
+#include "VisiteurDessin.h"
 
 FormeComposee::FormeComposee(Forme * f) {
 	vector<Forme*>::iterator it = find(_groupe.begin(), _groupe.end(), f);
@@ -32,10 +33,12 @@ double FormeComposee::getAire() const {
 }
 
 void FormeComposee::dessiner(const VisiteurDessin & visiteur) const {
+	
+	visiteur.visite(this);
 
-	for (unsigned int i = 0; i < _groupe.size(); i++) {
+	/*for (unsigned int i = 0; i < _groupe.size(); i++) {
 		_groupe[i]->dessiner(visiteur);
-	}
+	}*/
 }
 
 FormeComposee::operator string() const {
