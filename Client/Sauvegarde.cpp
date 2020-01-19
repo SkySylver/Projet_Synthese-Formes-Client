@@ -32,7 +32,13 @@ int getFileNum(string str) {
 	return i;
 }
 
-
+//version ecriture dans le fichier et non pas dans le titre
+void Sauvegarde::visite(const Segment *forme) const{
+	ostringstream nomFichier, contenu;
+	nomFichier << "Segment" << getFileNum("Segment") << ".txt";
+	contenu << "Segment" << forme->getCouleur() << "," << forme->getA().x << "," << forme->getA().y << "," << forme->getB().x << "," << forme->getB().y ;
+    Sauvegarde::Ecriture(nomFichier, contenu);
+}
 void Sauvegarde::visite(const Segment *forme) const{
 	ostringstream nomFichier, texte;
 
