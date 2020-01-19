@@ -64,6 +64,21 @@ void Sauvegarde::visite(const Polygone* forme) const {
 	Sauvegarde::Ecriture(nomFichier, contenu);
 }
 
+void Sauvegarde::visite(const FormeComposee *forme) const{
+	ostringstream nomFichier, contenu;
+	nomFichier << "./Sauvegardes/" << "FormeComposee" << getFileNum("FormeComposee") << ".txt";
+
+	vector<Forme*> vecteurs = forme->getGroupe();
+	vector<Forme*>::iterator it;
+
+	contenu << "Forme Composee," << forme->getCouleur() << "," << endl;
+	it = vecteurs.begin();
+	while (it != vecteurs.end()) {
+		(*it)->sauvegarder(new Sauvegarde());
+		it++;
+	}
+	return Sauvegarde::Ecriture(nomFichier, contenu);
+}
 
 //////////////////////////////////
 /////////////////////////////////
