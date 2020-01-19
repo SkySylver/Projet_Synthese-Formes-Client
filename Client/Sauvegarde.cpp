@@ -17,6 +17,22 @@ void Sauvegarde::Ecriture(ostringstream &nomFichier,ostringstream &texte)const{
 	file.close();
 }
 
+bool fexists(const char* filename){
+	ifstream ifile(filename);
+	return (bool) ifile;
+}
+
+int getFileNum(string str) {
+	int i = 0;
+	string str2 = str;
+	while(fexists(str2.c_str())){
+		i++;
+		str2 = str + to_string(i);
+	}
+	return i;
+}
+
+
 void Sauvegarde::visite(const Segment *forme) const{
 	ostringstream nomFichier, texte;
 
