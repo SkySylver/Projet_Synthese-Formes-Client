@@ -36,9 +36,38 @@ int getFileNum(string str) {
 void Sauvegarde::visite(const Segment *forme) const{
 	ostringstream nomFichier, contenu;
 	nomFichier << "Segment" << getFileNum("Segment") << ".txt";
-	contenu << "Segment" << forme->getCouleur() << "," << forme->getA().x << "," << forme->getA().y << "," << forme->getB().x << "," << forme->getB().y ;
+	contenu << "Segment," << forme->getCouleur() << "," << forme->getA().x << "," << forme->getA().y << "," << forme->getB().x << "," << forme->getB().y ;
     Sauvegarde::Ecriture(nomFichier, contenu);
 }
+
+void Sauvegarde::visite(const Cercle* forme) const {
+	ostringstream nomFichier, contenu;
+	nomFichier << "Cercle" << getFileNum("Cercle") << ".txt";
+	contenu << "Cercle," << forme->getCouleur() << "," << forme->getCentre().x << "," << forme->getCentre().y << "," << forme->getRayon();
+	Sauvegarde::Ecriture(nomFichier, contenu);
+}
+
+void Sauvegarde::visite(const Triangle* forme) const {
+	ostringstream nomFichier, contenu;
+	nomFichier << "Triangle" << getFileNum("Triangle") << ".txt";
+	contenu << "Triangle," << forme->getCouleur() << "," << forme->getA().x << "," << forme->getA().y << "," << forme->getB().x << "," << forme->getB().y << "," << forme->getC().x << "," << forme->getC().y;
+	Sauvegarde::Ecriture(nomFichier, contenu);
+}
+
+void Sauvegarde::visite(const Polygone* forme) const {
+	ostringstream nomFichier, contenu;
+	nomFichier << "Polygone" << getFileNum("Polygone");
+	contenu << "Polygone," << forme->getCouleur();
+	for (int i = 0; i < forme->getVecteurs().size(); i++) {
+		contenu << "," << forme->getVecteurs().at(i).x << "," << forme->getVecteurs().at(i).y;
+	}
+	Sauvegarde::Ecriture(nomFichier, contenu);
+}
+
+
+//////////////////////////////////
+/////////////////////////////////
+
 void Sauvegarde::visite(const Segment *forme) const{
 	ostringstream nomFichier, texte;
 
