@@ -52,17 +52,17 @@ void Sauvegarde::visite(const Polygone *forme) const {
 
 	Sauvegarde::Ecriture(nomFichier, texte);
 }
-
+/*
 int majNum() {
 	ostringstream Fichier;
 	Fichier << "NumDossierCompose.txt";
 
 //	ofstream()
 
-}
+}*/
 
 
-void Sauvegarde::visite(const FormeComposee *forme) const{
+void Sauvegarde::visite(const FormeComposee *forme) const{/*
 	ostringstream nomFichier, texte;
 
 	vector<Forme*> vecteurs = forme->getGroupe();
@@ -83,5 +83,5 @@ void Sauvegarde::visite(const FormeComposee *forme) const{
 	}
 
 	return Sauvegarde::Ecriture(nomFichier, texte);
-	
+	*/
 }
