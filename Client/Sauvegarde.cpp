@@ -17,6 +17,72 @@ void Sauvegarde::Ecriture(ostringstream &nomFichier,ostringstream &texte)const{
 	file.close();
 }
 
+bool fexists(const char* filename){
+	ifstream ifile(filename);
+	return (bool) ifile;
+}
+
+int getFileNum(string str) {
+	int i = 0;
+	string str2 = str;
+	while(fexists(str2.c_str())){
+		i++;
+		str2 = str + to_string(i);
+	}
+	return i;
+}
+
+//version ecriture dans le fichier et non pas dans le titre
+void Sauvegarde::visite(const Segment *forme) const{
+	ostringstream nomFichier, contenu;
+	nomFichier << "Segment" << getFileNum("Segment") << ".txt";
+	contenu << "Segment," << forme->getCouleur() << "," << forme->getA().x << "," << forme->getA().y << "," << forme->getB().x << "," << forme->getB().y ;
+    Sauvegarde::Ecriture(nomFichier, contenu);
+}
+
+void Sauvegarde::visite(const Cercle* forme) const {
+	ostringstream nomFichier, contenu;
+	nomFichier << "Cercle" << getFileNum("Cercle") << ".txt";
+	contenu << "Cercle," << forme->getCouleur() << "," << forme->getCentre().x << "," << forme->getCentre().y << "," << forme->getRayon();
+	Sauvegarde::Ecriture(nomFichier, contenu);
+}
+
+void Sauvegarde::visite(const Triangle* forme) const {
+	ostringstream nomFichier, contenu;
+	nomFichier << "Triangle" << getFileNum("Triangle") << ".txt";
+	contenu << "Triangle," << forme->getCouleur() << "," << forme->getA().x << "," << forme->getA().y << "," << forme->getB().x << "," << forme->getB().y << "," << forme->getC().x << "," << forme->getC().y;
+	Sauvegarde::Ecriture(nomFichier, contenu);
+}
+
+void Sauvegarde::visite(const Polygone* forme) const {
+	ostringstream nomFichier, contenu;
+	nomFichier << "Polygone" << getFileNum("Polygone");
+	contenu << "Polygone," << forme->getCouleur();
+	for (int i = 0; i < forme->getVecteurs().size(); i++) {
+		contenu << "," << forme->getVecteurs().at(i).x << "," << forme->getVecteurs().at(i).y;
+	}
+	Sauvegarde::Ecriture(nomFichier, contenu);
+}
+
+void Sauvegarde::visite(const FormeComposee *forme) const{
+	ostringstream nomFichier, contenu;
+	nomFichier << "./Sauvegardes/" << "FormeComposee" << getFileNum("FormeComposee") << ".txt";
+
+	vector<Forme*> vecteurs = forme->getGroupe();
+	vector<Forme*>::iterator it;
+
+	contenu << "Forme Composee," << forme->getCouleur() << "," << endl;
+	it = vecteurs.begin();
+	while (it != vecteurs.end()) {
+		(*it)->sauvegarder(new Sauvegarde());
+		it++;
+	}
+	return Sauvegarde::Ecriture(nomFichier, contenu);
+}
+
+//////////////////////////////////
+/////////////////////////////////
+
 void Sauvegarde::visite(const Segment *forme) const{
 	ostringstream nomFichier, texte;
 

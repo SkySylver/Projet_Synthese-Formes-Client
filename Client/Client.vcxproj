@@ -144,6 +144,7 @@
     <ClInclude Include="Erreur.h" />
     <ClInclude Include="Forme.h" />
     <ClInclude Include="FormeComposee.h" />
+    <ClInclude Include="Main.h" />
     <ClInclude Include="Polygone.h" />
     <ClInclude Include="Sauvegarde.h" />
     <ClInclude Include="Segment.h" />

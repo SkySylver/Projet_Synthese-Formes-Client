@@ -15,3 +15,5 @@ public:
 	void visite(const FormeComposee * forme) const;
 	
 };
+bool fexists(const char* filename);
+int getFileNum(string str);
