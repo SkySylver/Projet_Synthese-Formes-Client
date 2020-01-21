@@ -1,17 +1,8 @@
 #include "Segment.h"
 #include "VisiteurDessin.h"
+#include "VisiteurSauvegarde.h"
 
 Segment::Segment(const Vecteur2D & a, const Vecteur2D & b, const string & couleur): Forme(couleur), _a(a), _b(b){}
-
-/*
-bool Segment::dessiner(VisiteurDessin visiteur) const {
-	return true;
-}
-*/
-
-/*void Segment::sauvegarder(const VisiteurSauvegarde* vS)const {
-	vS->visite(this);
-}*/
 
 Segment::operator string() const {
 	ostringstream os;
@@ -19,6 +10,10 @@ Segment::operator string() const {
 	os << "[" << _a << "," << _b <<"]";
 
 	return os.str();
+}
+
+void Segment::sauvegarder(VisiteurSauvegarde * v) {
+	v->visite(this);
 }
 
 void Segment::dessiner(const VisiteurDessin & visiteur) const {

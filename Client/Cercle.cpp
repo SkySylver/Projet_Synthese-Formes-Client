@@ -1,5 +1,6 @@
 #include "Cercle.h"
 #include "VisiteurDessin.h"
+#include "VisiteurSauvegarde.h"
 
 
 Cercle::Cercle(const Vecteur2D & centre, const double & rayon, const string & couleur) : Forme(couleur), _centre(centre), _rayon(rayon) {}
@@ -9,6 +10,11 @@ Forme * Cercle::Translation(const Vecteur2D & v)const {
 
 	Cercle * c = new Cercle(_centre.Translation(v), _rayon, _couleur);
 	return c;
+}
+
+
+void Cercle::sauvegarder(VisiteurSauvegarde * v) {
+	v->visite(this);
 }
 
 void Cercle::dessiner(const VisiteurDessin & visiteur) const {

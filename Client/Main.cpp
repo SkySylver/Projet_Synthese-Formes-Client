@@ -3,6 +3,7 @@
 #include "Connexion.h"
 #include "Erreur.h"
 #include "Polygone.h"
+#include "Sauvegarde.h"
 
 using namespace std;
 
@@ -38,6 +39,46 @@ Vecteur2D saisirPoint(string n) {
 
 int main()
 {
+	Vecteur2D a(100, 100);
+	Vecteur2D b(200, 200);
+	Vecteur2D c(200, 200);
+	Vecteur2D d(200, 4);
+
+
+	vector<Vecteur2D> v;
+	v.push_back(a);
+	v.push_back(b);
+	v.push_back(c);
+	v.push_back(d);
+
+	Segment G(a, b, "red");
+	Triangle T(a, b, c, "blue");
+	Cercle C(c, 150.00, "blue");
+	Polygone P(v, "blue");
+	//	Segment G(a, b, "blue");
+//	Segment G(a, b, "blue");
+	//P.dessiner(V);
+	/*
+	FormeComposee fc;
+	fc.ajouterForme(&G);
+	fc.dessiner(V);
+	*/
+
+
+	Sauvegarde * saver = new Sauvegarde();
+	saver->visite(&G);
+	saver->visite(&T);
+	saver->visite(&C);
+	saver->visite(&P);
+
+	//	Co.requete("Segment;blue,10,10,100,100");
+	//	Co.requete("Cercle;blue,10,10,100,100");
+		//Co.requete("Polygone;black,100,100,100,200,300,300,400,300,500,500");
+
+
+	getchar();
+	return 0;
+	/*
 
 	WSAData _wsaData;
 	string reponse;
@@ -54,7 +95,7 @@ int main()
 		int familleAdresse = AF_INET;
 		int typeSocket = SOCK_STREAM;
 		int protocole = IPPROTO_TCP;
-		*/
+
 
 
 	Forme * forme;
@@ -151,5 +192,5 @@ int main()
 
 
 	getchar();
-	return 0;
+	return 0;*/
 }

@@ -55,7 +55,11 @@ public:
 	double getAire() const { return 0.00; }
 
 
-//	void sauvegarder(const VisiteurSauvegarde * vS)const;
+	/**
+	 * Sauvegarde cette forme
+	 * @param v : Correspond au type de sauvegarde qui sera faite
+	 */
+	void sauvegarder(VisiteurSauvegarde * v);
 	
 	/**
 	 * Dessine en fonction du visiteurDessin (Serveur, Librairie graphique, etc...)

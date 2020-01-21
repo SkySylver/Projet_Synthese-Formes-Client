@@ -64,6 +64,13 @@ public:
 	 */
 	virtual void dessiner(const VisiteurDessin & visiteur) const;
 
+
+	/**
+	 * Sauvegarde cette forme
+	 * @param v : Correspond au type de sauvegarde qui sera faite
+	 */
+	void sauvegarder(VisiteurSauvegarde * v);
+
 	/**
 	 * Retourne la translation du cercle par le vecteur v
 	 * @param v : le vecteur2D de translation

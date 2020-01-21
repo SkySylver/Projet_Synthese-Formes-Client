@@ -25,13 +25,6 @@ public :
 	 */
 	~Polygone() {};
 
-	/**
-	 * Dessine en fonction du visiteurDessin (Serveur, Librairie graphique, etc...)
-	 * @param visiteur : Visiteur
-	 */
-	virtual void dessiner(const VisiteurDessin & visiteur) const;
-
-
 	 /**
 	  * @return vector<Vecteur2D> correspondant à la liste liste des points représentants du Polygone
 	  */
@@ -63,6 +56,19 @@ public :
 	 * @return le Polygone au format string
 	 */
 	operator string() const;
+
+	/**
+	 * Sauvegarde cette forme
+	 * @param v : Correspond au type de sauvegarde qui sera faite
+	 */
+	void sauvegarder(VisiteurSauvegarde * v);
+
+	/**
+	 * Dessine en fonction du visiteurDessin (Serveur, Librairie graphique, etc...)
+	 * @param visiteur : Visiteur
+	 */
+	virtual void dessiner(const VisiteurDessin & visiteur) const;
+
 
 	/**
 	 * Retourne la translation du Polygone par le vecteur v

@@ -1,5 +1,6 @@
 #include "Polygone.h"
 #include "VisiteurDessin.h"
+#include "VisiteurSauvegarde.h"
 
 double Polygone::getAire() const {
 	int j = 0;
@@ -20,6 +21,10 @@ double Polygone::getAire() const {
 	aire += t.getAire();
 
 	return aire;
+}
+
+void Polygone::sauvegarder(VisiteurSauvegarde * v) {
+	v->visite(this);
 }
 
 void Polygone::dessiner(const VisiteurDessin & visiteur) const {

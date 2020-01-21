@@ -1,5 +1,6 @@
 #include "Triangle.h"
 #include "VisiteurDessin.h"
+#include "VisiteurSauvegarde.h"
 
 Triangle::Triangle(const Vecteur2D & a, const Vecteur2D & b, const Vecteur2D & c, const string & couleur):Forme(couleur),_a(a),_b(b),_c(c) {
 
@@ -15,6 +16,10 @@ void Triangle::setB(Vecteur2D b){
 
 void Triangle::setC(Vecteur2D c){
 	_c = c;
+}
+
+void Triangle::sauvegarder(VisiteurSauvegarde * v) {
+	v->visite(this);
 }
 
 void Triangle::dessiner(const VisiteurDessin & visiteur) const {

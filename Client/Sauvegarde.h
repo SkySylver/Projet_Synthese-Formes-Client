@@ -1,19 +1,23 @@
 #pragma once
 #include "VisiteurSauvegarde.h"
+#define DOSSIER "./Sauvegarde/"
+
 using namespace std;
 
 class Sauvegarde : public VisiteurSauvegarde{
-public:
-    int _num; //Pour nommer les fichiers, et avoir des noms différents
-	Sauvegarde() : VisiteurSauvegarde()  {}
-    void Ecriture(ostringstream &nomFichier,ostringstream &texte) const;
+private :
+	int _num; //Pour nommer les fichiers, et avoir des noms différents
+	void Ecriture(ostringstream &nomFichier, ostringstream &texte);
+	int getFileNum(string str);
 
-	void visite(const Cercle * forme) const;
-	void visite(const Segment * forme) const;
-	void visite(const Triangle * forme) const;
-	void visite(const Polygone * forme) const;
-	void visite(const FormeComposee * forme) const;
+public:
+	Sauvegarde() : VisiteurSauvegarde(){}
+
+	void visite(const Cercle * forme);
+	void visite(const Segment * forme);
+	void visite(const Triangle * forme);
+	void visite(const Polygone * forme);
+	void visite(const FormeComposee * forme);
 	
 };
 bool fexists(const char* filename);
-int getFileNum(string str);

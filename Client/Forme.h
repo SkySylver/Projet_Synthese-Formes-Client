@@ -26,6 +26,8 @@ public:
 	 */
 	~Forme() {};
 
+	virtual void sauvegarder(VisiteurSauvegarde * v) = 0;
+
 	/**
 	 * Constructeur avec couleur
 	 */
