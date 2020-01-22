@@ -6,7 +6,6 @@
 
 
 void Sauvegarde::Ecriture(ostringstream &nomFichier,ostringstream &texte){
-	ostringstream _Fichier;
 	_Fichier << DOSSIER << nomFichier.str();
 
 	if (!fexists(_Fichier.str().c_str())) {
@@ -54,15 +53,10 @@ void Sauvegarde::visite(const FormeComposee *forme) {
 	ostringstream nomFichier, texte;
 
 	vector<Forme*> vecteurs = forme->getGroupe();
-	vector<Forme*>::iterator iter;
 
 	nomFichier << "FormeComposee," << forme->getCouleur() << "_" << _num;
 
-
 	if (CreateDirectory(nomFichier.str().c_str(), NULL)) {
-		/*while (iter != vecteurs.end()) {
-			texte << (*iter)->Sauvegarder(new Sauvegarde());
-			*/
 		for (unsigned int i = 0; i < vecteurs.size(); i++) vecteurs.at(i)->sauvegarder(this);
 	}
 

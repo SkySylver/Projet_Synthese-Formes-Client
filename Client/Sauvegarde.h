@@ -6,6 +6,7 @@ using namespace std;
 
 class Sauvegarde : public VisiteurSauvegarde{
 private :
+	ostringstream _Fichier;
 	int _num; //Pour nommer les fichiers, et avoir des noms différents
 	void Ecriture(ostringstream &nomFichier, ostringstream &texte);
 	int getFileNum(string str);
