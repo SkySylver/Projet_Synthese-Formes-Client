@@ -33,7 +33,7 @@ bool fexists(const char* filename){
 	return (bool) ifile;
 }
 
-int Sauvegarde::getFileNum(string str) {
+int Sauvegarde::getFileNum() {
 
 	fstream file;
 	ostringstream temps;
@@ -90,7 +90,7 @@ void Sauvegarde::visite(const Segment *forme) {
 
 	ostringstream nomFichier, contenu;
 
-	nomFichier << "Segment" << getFileNum("Segment") << ".txt";
+	nomFichier << "Segment" << getFileNum() << ".txt";
 	contenu << "Segment," << forme->getCouleur() << "," << forme->getA().x << "," << forme->getA().y << "," << forme->getB().x << "," << forme->getB().y;
 
 	Sauvegarde::Ecriture(nomFichier, contenu);
@@ -99,7 +99,7 @@ void Sauvegarde::visite(const Segment *forme) {
 void Sauvegarde::visite(const Cercle* forme) {
 	ostringstream nomFichier, contenu;
 
-	nomFichier << "Cercle" << getFileNum("Cercle") << ".txt";
+	nomFichier << "Cercle" << getFileNum() << ".txt";
 	contenu << "Cercle," << forme->getCouleur() << "," << forme->getCentre().x << "," << forme->getCentre().y << "," << forme->getRayon();
 
 	Sauvegarde::Ecriture(nomFichier, contenu);
@@ -108,7 +108,7 @@ void Sauvegarde::visite(const Cercle* forme) {
 void Sauvegarde::visite(const Triangle* forme) {
 	ostringstream nomFichier, contenu;
 
-	nomFichier << "Triangle" << getFileNum("Triangle") << ".txt";
+	nomFichier << "Triangle" << getFileNum() << ".txt";
 	contenu << "Triangle," << forme->getCouleur() << "," << forme->getA().x << "," << forme->getA().y << "," << forme->getB().x << "," << forme->getB().y << "," << forme->getC().x << "," << forme->getC().y;
 
 	Sauvegarde::Ecriture(nomFichier, contenu);
@@ -117,7 +117,7 @@ void Sauvegarde::visite(const Triangle* forme) {
 void Sauvegarde::visite(const Polygone* forme) {
 	ostringstream nomFichier, contenu;
 
-	nomFichier << "Polygone" << getFileNum("Polygone") << ".txt";
+	nomFichier << "Polygone" << getFileNum() << ".txt";
 	contenu << "Polygone," << forme->getCouleur();
 
 	for (unsigned int i = 0; i < forme->getVecteurs().size(); i++) {
