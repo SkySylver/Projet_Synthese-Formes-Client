@@ -55,6 +55,14 @@ int main()
 	Triangle T(a, b, c, "blue");
 	Cercle C(c, 150.00, "blue");
 	Polygone P(v, "blue");
+
+	FormeComposee fv(&P);
+
+	FormeComposee fc(&G);
+	fc.ajouterForme(&T);
+	fc.ajouterForme(&C);
+	fc.ajouterForme(&fv);
+
 	//	Segment G(a, b, "blue");
 //	Segment G(a, b, "blue");
 	//P.dessiner(V);
@@ -66,6 +74,9 @@ int main()
 
 
 	Sauvegarde * saver = new Sauvegarde();
+
+	saver->visite(&fc);
+	/*
 	saver->visite(&G);
 	saver->visite(&T);
 	saver->visite(&C);

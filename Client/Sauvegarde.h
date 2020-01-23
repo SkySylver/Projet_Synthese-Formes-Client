@@ -13,9 +13,7 @@ private :
 	int getFileNum(string str);
 
 public:
-	Sauvegarde() : VisiteurSauvegarde(){
-		_fichier << DOSSIER;
-	}
+	Sauvegarde();
 
 	void visite(const Cercle * forme);
 	void visite(const Segment * forme);
@@ -25,3 +23,4 @@ public:
 	
 };
 bool fexists(const char* filename);
+bool dirExists(const char* const path);

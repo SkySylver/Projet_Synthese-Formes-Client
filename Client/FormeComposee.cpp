@@ -3,12 +3,11 @@
 #include "VisiteurSauvegarde.h"
 
 FormeComposee::FormeComposee(Forme * f) {
-	vector<Forme*>::iterator it = find(_groupe.begin(), _groupe.end(), f);
-	if (it != end(_groupe)) {
-		_groupe.push_back(f);
+	if (find(_groupe.begin(), _groupe.end(), f) != _groupe.end()) {
+		throw invalid_argument("Un groupe contient déjà cette forme");
 	}
 	else {
-		throw invalid_argument("Un groupe contient déjà cette forme");
+		_groupe.push_back(f);
 	}
 }
 
