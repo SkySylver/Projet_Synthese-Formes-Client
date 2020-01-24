@@ -7,9 +7,6 @@
 
 
 Connexion::Connexion(char adresseServeur[L], short portServeur) {
-	WSADATA wsaData;
-	initWinsockLib(wsaData);
-
 	creerSocket(_familleAdresse, _typeSocket, _protocole);
 	lancer(adresseServeur, portServeur);
 	Fenetre();
@@ -17,19 +14,9 @@ Connexion::Connexion(char adresseServeur[L], short portServeur) {
 
 
 Connexion::Connexion(int familleAdresse, int typeSocket, int protocole, char adresseServeur[L], short portServeur): _familleAdresse(familleAdresse), _typeSocket(typeSocket), _protocole(protocole) {
-	WSADATA wsaData;
-	initWinsockLib(wsaData);
 	creerSocket(familleAdresse, typeSocket, protocole);
 	lancer(adresseServeur, portServeur);
 	Fenetre();
-}
-
-void Connexion::initWinsockLib(WSADATA & wsaData) {
-
-	int _r;
-	_r = WSAStartup(MAKEWORD(2, 0), &wsaData);       // MAKEWORD(2,0) sert à indiquer la version de la librairie à utiliser : 1 pour winsock et 2 pour winsock2
-
-	if (_r) throw Erreur("L'initialisation a échoué");
 }
 
 
@@ -53,7 +40,6 @@ void Connexion::arreter() {
 	_r = closesocket(_sock);                          // renvoie une valeur non nulle en cas d'échec. Le code d'erreur peut être obtenu par un appel à WSAGetLastError()
 	if (_r) throw Erreur("La fermeture du socket a échoué");
 
-	WSACleanup();
 	cout << "Arret du client" << endl;
 }
 

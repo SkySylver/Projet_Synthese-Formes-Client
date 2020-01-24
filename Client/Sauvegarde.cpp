@@ -35,16 +35,27 @@ bool fexists(const char* filename){
 
 int Sauvegarde::getFileNum() {
 
-	fstream file;
 	ostringstream temps;
 	string num;
+	char * buffer = new char(32);
+	int numFichier;
+
 	temps << _fichier.str() << "Num.txt";
 
 	if(fexists(temps.str().c_str())){
-		file.open(temps.str().c_str(), fstream::in | fstream::out);
-		file >> num;
+		ifstream ifile;
+		ifile.open(temps.str().c_str(), fstream::in | fstream::trunc);
+		ifile.read(buffer, 32);
+		numFichier = atoi(buffer);
+		ifile.close();
 
-		//str2 = str + to_string(i);
+
+		ofstream ofile;
+		ofile.open(temps.str().c_str(), fstream::out);
+		ofile << (numFichier+1);
+		ofile.close();
+
+		return numFichier;
 	}
 	else {
 
@@ -75,7 +86,7 @@ void Sauvegarde::visite(const FormeComposee *forme) {
 	vector<Forme*>::iterator iter;
 
 	tempDossier << _fichier.str();
-	_fichier << "FormeComposee," << forme->getCouleur() << "_" << _num << "/";
+	_fichier << "FormeComposee," << forme->getCouleur() << "_" << getFileNum() << "/";
 
 	if (CreateDirectory(_fichier.str().c_str(), NULL)) {
 		for (unsigned int i = 0; i < vecteurs.size(); i++) vecteurs.at(i)->sauvegarder(this);
@@ -91,7 +102,8 @@ void Sauvegarde::visite(const Segment *forme) {
 	ostringstream nomFichier, contenu;
 
 	nomFichier << "Segment" << getFileNum() << ".txt";
-	contenu << "Segment," << forme->getCouleur() << "," << forme->getA().x << "," << forme->getA().y << "," << forme->getB().x << "," << forme->getB().y;
+
+	contenu << "Segment," << forme->getCouleur() << "," << forme->getA().x << "," << forme->getA().y << "," << forme->getB().x << "," << forme->getB().y << "_"<< getFileNum();
 
 	Sauvegarde::Ecriture(nomFichier, contenu);
 }
@@ -100,7 +112,7 @@ void Sauvegarde::visite(const Cercle* forme) {
 	ostringstream nomFichier, contenu;
 
 	nomFichier << "Cercle" << getFileNum() << ".txt";
-	contenu << "Cercle," << forme->getCouleur() << "," << forme->getCentre().x << "," << forme->getCentre().y << "," << forme->getRayon();
+	contenu << "Cercle," << forme->getCouleur() << "," << forme->getCentre().x << "," << forme->getCentre().y << "," << forme->getRayon() << "_" << getFileNum();
 
 	Sauvegarde::Ecriture(nomFichier, contenu);
 }
@@ -109,7 +121,7 @@ void Sauvegarde::visite(const Triangle* forme) {
 	ostringstream nomFichier, contenu;
 
 	nomFichier << "Triangle" << getFileNum() << ".txt";
-	contenu << "Triangle," << forme->getCouleur() << "," << forme->getA().x << "," << forme->getA().y << "," << forme->getB().x << "," << forme->getB().y << "," << forme->getC().x << "," << forme->getC().y;
+	contenu << "Triangle," << forme->getCouleur() << "," << forme->getA().x << "," << forme->getA().y << "," << forme->getB().x << "," << forme->getB().y << "," << forme->getC().x << "," << forme->getC().y << "_" << getFileNum();
 
 	Sauvegarde::Ecriture(nomFichier, contenu);
 }
@@ -118,7 +130,7 @@ void Sauvegarde::visite(const Polygone* forme) {
 	ostringstream nomFichier, contenu;
 
 	nomFichier << "Polygone" << getFileNum() << ".txt";
-	contenu << "Polygone," << forme->getCouleur();
+	contenu << "Polygone," << forme->getCouleur() << "_" << getFileNum();
 
 	for (unsigned int i = 0; i < forme->getVecteurs().size(); i++) {
 		contenu << "," << forme->getVecteurs().at(i).x << "," << forme->getVecteurs().at(i).y;

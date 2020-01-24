@@ -45,11 +45,6 @@ public:
 	 */
 	void arreter();
 
-	/**
-	 * Initialise la librairie winsock
-	 *
-	 */
-	void initWinsockLib(WSADATA & wsaData);
 	
 	/**
 	 * Creer un socket pour ce client

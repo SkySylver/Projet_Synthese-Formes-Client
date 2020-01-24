@@ -4,6 +4,7 @@
 #include "Erreur.h"
 #include "Polygone.h"
 #include "Sauvegarde.h"
+#include "Singleton.h"
 
 using namespace std;
 
@@ -39,7 +40,7 @@ Vecteur2D saisirPoint(string n) {
 
 int main()
 {
-	Vecteur2D a(100, 100);
+/*	Vecteur2D a(100, 100);
 	Vecteur2D b(200, 200);
 	Vecteur2D c(200, 200);
 	Vecteur2D d(200, 4);
@@ -72,16 +73,16 @@ int main()
 	fc.dessiner(V);
 	*/
 
-
+	/*
 	Sauvegarde * saver = new Sauvegarde();
 
-	saver->visite(&fc);
+	saver->visite(&G);
 	/*
 	saver->visite(&G);
 	saver->visite(&T);
 	saver->visite(&C);
 	saver->visite(&P);
-
+	
 	//	Co.requete("Segment;blue,10,10,100,100");
 	//	Co.requete("Cercle;blue,10,10,100,100");
 		//Co.requete("Polygone;black,100,100,100,200,300,300,400,300,500,500");
@@ -89,21 +90,13 @@ int main()
 
 	getchar();
 	return 0;
-	/*
+	*/
 
-	WSAData _wsaData;
+
+	Singleton sing();
+
 	string reponse;
-
-	int _r;
-	_r = WSAStartup(MAKEWORD(2, 0), &_wsaData);       // MAKEWORD(2,0) sert à indiquer la version de la librairie à utiliser : 1 pour winsock et 2 pour winsock2
-
-	if (_r) throw Erreur("L'initialisation a échoué");
-
-
-
-//	initWinsockLib(_wsaData);
-	/*	WSADATA wsaData;
-		int familleAdresse = AF_INET;
+	int familleAdresse = AF_INET;
 		int typeSocket = SOCK_STREAM;
 		int protocole = IPPROTO_TCP;
 
@@ -152,7 +145,7 @@ int main()
 		case 4:
 			cin >> reponse;
 			xtemp = stoi(reponse);
-			forme = new Cercle(saisirPoint("Centre"), xtemp);
+//			forme = new Cercle(saisirPoint("Centre"), xtemp);
 
 //			saisirPoint
 
@@ -165,7 +158,7 @@ int main()
 
 	}
 
-
+	/*
 
 	char adresseServeur[L] = "10.11.85.253";
 	short portServeur = 6666;
@@ -200,8 +193,5 @@ int main()
 //	Co.requete("Segment;blue,10,10,100,100");
 //	Co.requete("Cercle;blue,10,10,100,100");
 	//Co.requete("Polygone;black,100,100,100,200,300,300,400,300,500,500");
-
-
-	getchar();
-	return 0;*/
+	*/
 }
