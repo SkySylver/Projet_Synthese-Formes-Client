@@ -97,8 +97,8 @@ int main()
 
 	string reponse;
 	int familleAdresse = AF_INET;
-		int typeSocket = SOCK_STREAM;
-		int protocole = IPPROTO_TCP;
+	int typeSocket = SOCK_STREAM;
+	int protocole = IPPROTO_TCP;
 
 
 
