@@ -65,21 +65,19 @@ int main()
 	//EXEMPLE FORME COMPOSEE
 	cout << "Requete dessin d'une forme composee." << endl;
 	Vecteur2D a(100, 100);
-	Vecteur2D b(200, 200);
+	Vecteur2D b(100, 200);
 	Vecteur2D c(200, 200);
-	Vecteur2D d(200, 4);
+	Vecteur2D d(200, 100);
 
 	v.push_back(a);
 	v.push_back(b);
 	v.push_back(c);
 	v.push_back(d);
 
-	Segment G(a, b, "blue");
-	Triangle T(a, b, c, "blue");
-	Cercle C(c, 15.00, "blue");
+	Triangle T(Vecteur2D(100, 300), Vecteur2D(100, 400), Vecteur2D(200, 400), "blue");
+	Cercle C(c, 40, "blue");
 	Polygone P(v, "blue");
 	FormeComposee fc;
-	fc.ajouterForme(&G);
 	fc.ajouterForme(&C);
 	fc.ajouterForme(&P);
 	fc.ajouterForme(&T);
