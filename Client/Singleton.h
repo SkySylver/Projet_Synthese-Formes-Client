@@ -7,17 +7,26 @@
 #include "Erreur.h"
 class Singleton
 {
+private:
+	/**
+	* instance du singleton
+	*/
+	static Singleton instance;
 public:
 	
 	/*
-	 * Constructeur par défaut
+	 * Constructeur par dÃ©faut
 	 * Initialise la librairie Winsock
 	 */
 	Singleton();
 
 	/**
-	 * Destructeur par défaut
+	 * Destructeur par dÃ©faut
 	 */
 	~Singleton();
+	/**
+	*	retourne l'instance du singleton
+	*/
+	static Singleton& getInstance();
 };
 
