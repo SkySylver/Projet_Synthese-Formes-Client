@@ -42,13 +42,16 @@ int main()
 {
 
 	Singleton sing();
-	cout << "Singleton initialis !" << endl;
+	cout << "Singleton initialisé !" << endl;
 
 
 	int familleAdresse = AF_INET;
 	int typeSocket = SOCK_STREAM;
 	int protocole = IPPROTO_TCP;
-
+	char adresseServeur[L] = "192.168.0.49";
+	short portServeur = 6666;
+	VisiteurServeur V(adresseServeur, portServeur);
+	Connexion Co(adresseServeur, portServeur);
 
 
 	Forme * forme;
@@ -59,33 +62,54 @@ int main()
 	int i = 0;
 	Polygone* p = new Polygone(v);
 
+
+	//EXEMPLE FORME COMPOSEE
+	cout << "Requete dessin d'une forme composee." << endl;
+	Vecteur2D a(100, 100);
+	Vecteur2D b(200, 200);
+	Vecteur2D c(200, 200);
+	Vecteur2D d(200, 4);
+
+	v.push_back(a);
+	v.push_back(b);
+	v.push_back(c);
+	v.push_back(d);
+
+	Segment G(a, b, "blue");
+	Triangle T(a, b, c, "blue");
+	Cercle C(c, 150.00, "blue");
+	Polygone P(v, "blue");
+	FormeComposee fc;
+	fc.ajouterForme(&G);
+	fc.ajouterForme(&C);
+	fc.ajouterForme(&P);
+	fc.ajouterForme(&T);
+	fc.dessiner(V);
+
+	cout << "Forme composee dessinee." << endl;
+
+
 	while (true) {
 		cout << reponse;
 		cout << "Que souhaitez-vous faire :" << endl;
 		cout << "========= CREATIONS =========" << endl;
-		cout << "1 : Creer FormeComposee" << endl;
+		cout << "1 : Cree Triangle" << endl;
 		cout << "2 : Creer Segment" << endl;
 		cout << "3 : Creer Polygone" << endl;
 		cout << "4 : Creer Cercle" << endl;
-		cout << "5 : Creer Triangle" << endl;
-
-		cout << "6 : Creer Connexion" << endl;
-		cout << "7 : Creer VisiteurServeur" << endl;
-
 		cout << "========= CONSULTATIONS =========" << endl;
 		cout << "8 : Liste des formes" << endl;
-		
-		
-		
 		
 		cin >> reponse;
 
 		switch (stoi(reponse)) {
 		case 1:
-			forme = new FormeComposee();
+			forme = new Triangle(saisirPoint("3"), saisirPoint("2"), saisirPoint("1"));
+			forme->dessiner(V);			
 			break;
 		case 2:
 			forme = new Segment(saisirPoint("2"), saisirPoint("1"));
+			forme->dessiner(V);
 			break;
 		case 3:
 
@@ -98,22 +122,14 @@ int main()
 				p->ajouterVecteur(saisirPoint(to_string(i)));				
 			}
 			forme = p;
+			//forme->dessiner(V);
 			break;
 		case 4:
 			cout << "";
 			cin >> reponse;
 			xtemp = stoi(reponse);
 //			forme = new Cercle(saisirPoint("Centre"), xtemp);
-
-//			saisirPoint
-
 		}
-
-
-			
-
-
-
 	}
 
 	/*
