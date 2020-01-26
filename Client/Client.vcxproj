@@ -125,13 +125,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Cercle.cpp" />
+    <ClCompile Include="ChargeurSegment.cpp" />
     <ClCompile Include="Connexion.cpp" />
     <ClCompile Include="Erreur.cpp" />
     <ClCompile Include="Forme.cpp" />
     <ClCompile Include="FormeComposee.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Polygone.cpp" />
-    <ClCompile Include="Sauvegarde.cpp" />
+    <ClCompile Include="Sauvegarde\Sauvegarde.cpp" />
     <ClCompile Include="Segment.cpp" />
     <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="Triangle.cpp" />
@@ -141,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cercle.h" />
+    <ClInclude Include="ChargeurSegment.h" />
     <ClInclude Include="Chargeur\Chargeur.h" />
     <ClInclude Include="Chargeur\ChargeurCOR.h" />
     <ClInclude Include="Connexion.h" />
@@ -148,7 +150,7 @@
     <ClInclude Include="Forme.h" />
     <ClInclude Include="FormeComposee.h" />
     <ClInclude Include="Polygone.h" />
-    <ClInclude Include="Sauvegarde.h" />
+    <ClInclude Include="Sauvegarde\Sauvegarde.h" />
     <ClInclude Include="Segment.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Triangle.h" />

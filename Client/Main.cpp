@@ -42,8 +42,9 @@ int main()
 {
 
 	Singleton sing();
+	cout << "Singleton initialisé !" << endl;
 
-	string reponse;
+
 	int familleAdresse = AF_INET;
 	int typeSocket = SOCK_STREAM;
 	int protocole = IPPROTO_TCP;
@@ -51,7 +52,7 @@ int main()
 
 
 	Forme * forme;
-	string x, y;
+	string x, y, reponse;
 	double xtemp;
 	char * end;
 	vector<Vecteur2D> v;
@@ -59,8 +60,9 @@ int main()
 	Polygone* p = new Polygone(v);
 
 	while (true) {
-		
+		cout << reponse;
 		cout << "Que souhaitez-vous faire :" << endl;
+		cout << "========= CREATIONS =========" << endl;
 		cout << "1 : Creer FormeComposee" << endl;
 		cout << "2 : Creer Segment" << endl;
 		cout << "3 : Creer Polygone" << endl;
@@ -70,6 +72,12 @@ int main()
 		cout << "6 : Creer Connexion" << endl;
 		cout << "7 : Creer VisiteurServeur" << endl;
 
+		cout << "========= CONSULTATIONS =========" << endl;
+		cout << "8 : Liste des formes" << endl;
+		
+		
+		
+		
 		cin >> reponse;
 
 		switch (stoi(reponse)) {
@@ -77,9 +85,10 @@ int main()
 			forme = new FormeComposee();
 			break;
 		case 2:
-			forme = new Segment(saisirPoint("1"), saisirPoint("2"));
+			forme = new Segment(saisirPoint("2"), saisirPoint("1"));
 			break;
-		case 3:			
+		case 3:
+
 			while(true) {
 				cout << "Voulez-vous ajouter un point au vecteur ? (o/n)";
 				cin >> reponse;
@@ -91,6 +100,7 @@ int main()
 			forme = p;
 			break;
 		case 4:
+			cout << "";
 			cin >> reponse;
 			xtemp = stoi(reponse);
 //			forme = new Cercle(saisirPoint("Centre"), xtemp);
