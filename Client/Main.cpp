@@ -51,7 +51,6 @@ int main()
 	char adresseServeur[L] = "192.168.0.49";
 	short portServeur = 6666;
 	VisiteurServeur V(adresseServeur, portServeur);
-	Connexion Co(adresseServeur, portServeur);
 
 
 	Forme * forme;
@@ -77,7 +76,7 @@ int main()
 
 	Segment G(a, b, "blue");
 	Triangle T(a, b, c, "blue");
-	Cercle C(c, 150.00, "blue");
+	Cercle C(c, 15.00, "blue");
 	Polygone P(v, "blue");
 	FormeComposee fc;
 	fc.ajouterForme(&G);
@@ -97,9 +96,7 @@ int main()
 		cout << "2 : Creer Segment" << endl;
 		cout << "3 : Creer Polygone" << endl;
 		cout << "4 : Creer Cercle" << endl;
-		cout << "========= CONSULTATIONS =========" << endl;
-		cout << "8 : Liste des formes" << endl;
-		
+
 		cin >> reponse;
 
 		switch (stoi(reponse)) {
@@ -122,84 +119,16 @@ int main()
 				p->ajouterVecteur(saisirPoint(to_string(i)));				
 			}
 			forme = p;
-			//forme->dessiner(V);
+			forme->dessiner(V);
 			break;
 		case 4:
-			cout << "";
-			cin >> reponse;
-			xtemp = stoi(reponse);
-//			forme = new Cercle(saisirPoint("Centre"), xtemp);
+			int rayon;
+			cout << "Saisir le rayon du cercle";
+			cin >> rayon;
+			forme = new Cercle(saisirPoint("Centre"), rayon, "red");
+			forme->dessiner(V);
 		}
 	}
-
-	/*
-
-	char adresseServeur[L] = "10.11.85.253";
-	short portServeur = 6666;
-
-
-	Vecteur2D a(100, 100);
-	Vecteur2D b(200, 200);
-	Vecteur2D c(200,200);
-	Vecteur2D d(200, 4);
-	
-	//Connexion Co(adresseServeur, portServeur);
-
-	VisiteurServeur V(adresseServeur, portServeur);
-
-	vector<Vecteur2D> v;
-	v.push_back(a);
-	v.push_back(b);
-	v.push_back(c);
-	v.push_back(d);
-
-	Segment G(a, b, "red");
-	Triangle T(a, b, c, "blue");
-	Cercle C(c, 150.00, "blue");
-	Polygone P(v, "blue");
-	//	Segment G(a, b, "blue");
-//	Segment G(a, b, "blue");
-	//P.dessiner(V);
-	FormeComposee fc;
-	fc.ajouterForme(&G);
-	fc.dessiner(V);
-
-//	Co.requete("Segment;blue,10,10,100,100");
-//	Co.requete("Cercle;blue,10,10,100,100");
-	//Co.requete("Polygone;black,100,100,100,200,300,300,400,300,500,500");
-	*/
-	/*	Vecteur2D a(100, 100);
-		Vecteur2D b(200, 200);
-		Vecteur2D c(200, 200);
-		Vecteur2D d(200, 4);
-
-
-		vector<Vecteur2D> v;
-		v.push_back(a);
-		v.push_back(b);
-		v.push_back(c);
-		v.push_back(d);
-
-		Segment G(a, b, "red");
-		Triangle T(a, b, c, "blue");
-		Cercle C(c, 150.00, "blue");
-		Polygone P(v, "blue");
-
-		FormeComposee fv(&P);
-
-		FormeComposee fc(&G);
-		fc.ajouterForme(&T);
-		fc.ajouterForme(&C);
-		fc.ajouterForme(&fv);
-
-		//	Segment G(a, b, "blue");
-	//	Segment G(a, b, "blue");
-		//P.dessiner(V);
-		/*
-		FormeComposee fc;
-		fc.ajouterForme(&G);
-		fc.dessiner(V);
-		*/
 
 		/*
 		Sauvegarde * saver = new Sauvegarde();
