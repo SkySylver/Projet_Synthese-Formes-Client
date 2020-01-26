@@ -3,7 +3,7 @@
 #include "Connexion.h"
 #include "Erreur.h"
 #include "Polygone.h"
-#include "Sauvegarde.h"
+#include "Sauvegarde/Sauvegarde.h"
 #include "Singleton.h"
 
 using namespace std;
@@ -42,7 +42,7 @@ int main()
 {
 
 	Singleton sing();
-	cout << "Singleton initialisé !" << endl;
+	cout << "Singleton initialis !" << endl;
 
 
 	int familleAdresse = AF_INET;
