@@ -125,7 +125,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Cercle.cpp" />
-    <ClCompile Include="ChargeurSegment.cpp" />
+    <ClCompile Include="Chargeur\ChargeurCercle.cpp" />
+    <ClCompile Include="Chargeur\ChargeurPolygone.cpp" />
+    <ClCompile Include="Chargeur\ChargeurSegment.cpp" />
+    <ClCompile Include="Chargeur\ChargeurTriangle.cpp" />
     <ClCompile Include="Connexion.cpp" />
     <ClCompile Include="Erreur.cpp" />
     <ClCompile Include="Forme.cpp" />
@@ -142,9 +145,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cercle.h" />
-    <ClInclude Include="ChargeurSegment.h" />
     <ClInclude Include="Chargeur\Chargeur.h" />
+    <ClInclude Include="Chargeur\ChargeurCercle.h" />
     <ClInclude Include="Chargeur\ChargeurCOR.h" />
+    <ClInclude Include="Chargeur\ChargeurPolygone.h" />
+    <ClInclude Include="Chargeur\ChargeurSegment.h" />
+    <ClInclude Include="Chargeur\ChargeurTriangle.h" />
     <ClInclude Include="Connexion.h" />
     <ClInclude Include="Erreur.h" />
     <ClInclude Include="Forme.h" />

@@ -7,20 +7,18 @@
 
 class ChargeurCOR : public Chargeur {
 protected:
-
-	ChargeurCOR(ChargeurCOR* next) : suivant(next) {}
-
-	virtual Forme * chargerForme(const string& contenu, bool charge) const = 0;
+	virtual Forme * chargerForme(const string& contenu) const = 0;
 
 public:
 	ChargeurCOR* suivant;
-	~ChargeurCOR(){}
-	Forme* Charger(const string& contenu) const {
-		Forme* forme = chargerForme(contenu);
+	ChargeurCOR(ChargeurCOR* next) : Chargeur(), suivant(next) {};
+	~ChargeurCOR() {}
+
+	Forme* Charger(const string& nomFichier) const {
+		Forme* forme = chargerForme(nomFichier);
 		if (forme != NULL) return forme;
-		else {
-			if (suivant == NULL) return NULL;
-			else return suivant->Charger(contenu);
-		}
+		else if (suivant == NULL) return NULL;
+		else return suivant->Charger(nomFichier);
 	}
+
 };

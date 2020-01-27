@@ -6,5 +6,6 @@
 using namespace std;
 
 class Chargeur {
-	virtual Forme* Charger(const string& contenu) const = 0;
+
+	virtual Forme* Charger(const string& nomFichier)const = 0;
 };

@@ -41,26 +41,28 @@ int Sauvegarde::getFileNum() {
 	int numFichier;
 
 	temps << _fichier.str() << "Num.txt";
+	ifstream ifile;
+	ifile.open(temps.str().c_str(), ifstream::in);
 
 	if(fexists(temps.str().c_str())){
-		ifstream ifile;
-		ifile.open(temps.str().c_str(), fstream::in | fstream::trunc);
 		ifile.read(buffer, 32);
 		numFichier = atoi(buffer);
 		ifile.close();
 
 
-		ofstream ofile;
-		ofile.open(temps.str().c_str(), fstream::out);
-		ofile << (numFichier+1);
-		ofile.close();
-
-		return numFichier;
 	}
 	else {
+		numFichier = 0;
 
-		return 0;
 	}
+
+	ofstream ofile;
+	ofile.open(temps.str().c_str(), ofstream::out | ifstream::trunc);
+	ofile << (numFichier + 1);
+	ofile.close();
+
+	return numFichier;
+
 }
 
 bool dirExists(const char* const path)

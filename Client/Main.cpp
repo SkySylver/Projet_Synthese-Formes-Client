@@ -5,6 +5,11 @@
 #include "Polygone.h"
 #include "Sauvegarde/Sauvegarde.h"
 #include "Singleton.h"
+#include "Chargeur/ChargeurCercle.h"
+#include "Chargeur/ChargeurSegment.h"
+#include "Chargeur/ChargeurTriangle.h"
+#include "Chargeur/ChargeurPolygone.h"
+
 
 using namespace std;
 
@@ -40,7 +45,39 @@ Vecteur2D saisirPoint(string n) {
 
 int main()
 {
+	Sauvegarde * saver = new Sauvegarde();
+	vector<Vecteur2D> v;
 
+	Vecteur2D a(100, 100);
+	Vecteur2D b(100, 200);
+	Vecteur2D c(200, 200);
+	Vecteur2D d(200, 100);
+
+
+	v.push_back(a);
+	v.push_back(b);
+	v.push_back(c);
+	v.push_back(d);
+
+	Triangle T(Vecteur2D(100, 300), Vecteur2D(100, 400), Vecteur2D(200, 400), "blue");
+	Cercle C(c, 40, "blue");
+	Polygone P(v, "blue");
+	FormeComposee fc;
+	fc.ajouterForme(&C);
+	fc.ajouterForme(&P);
+	fc.ajouterForme(&T);
+
+	saver->visite(&T);
+	saver->visite(&P);
+
+	ChargeurCOR * charger = new ChargeurTriangle(new ChargeurCercle(new ChargeurSegment(NULL)));
+
+	Forme * f = charger->Charger("Sauvegarde/Triangle0.txt");
+
+
+
+
+	/*
 	Singleton sing();
 	cout << "Singleton initialisé !" << endl;
 
@@ -64,25 +101,6 @@ int main()
 
 	//EXEMPLE FORME COMPOSEE
 	cout << "Requete dessin d'une forme composee." << endl;
-	Vecteur2D a(100, 100);
-	Vecteur2D b(100, 200);
-	Vecteur2D c(200, 200);
-	Vecteur2D d(200, 100);
-
-	v.push_back(a);
-	v.push_back(b);
-	v.push_back(c);
-	v.push_back(d);
-
-	Triangle T(Vecteur2D(100, 300), Vecteur2D(100, 400), Vecteur2D(200, 400), "blue");
-	Cercle C(c, 40, "blue");
-	Polygone P(v, "blue");
-	FormeComposee fc;
-	fc.ajouterForme(&C);
-	fc.ajouterForme(&P);
-	fc.ajouterForme(&T);
-	fc.dessiner(V);
-
 	cout << "Forme composee dessinee." << endl;
 
 
@@ -135,8 +153,6 @@ int main()
 		/*
 		saver->visite(&G);
 		saver->visite(&T);
-		saver->visite(&C);
-		saver->visite(&P);
 
 		//	Co.requete("Segment;blue,10,10,100,100");
 		//	Co.requete("Cercle;blue,10,10,100,100");
