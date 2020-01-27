@@ -2,8 +2,7 @@
 Triangle * ChargeurTriangle::chargerForme(const string& nomFichier) const {
 	string contenu;
 	ifstream fichier;
-	Triangle * temp;
-
+	string arr[8];
 	fichier.open(nomFichier.c_str(), fstream::in);
 
 	if (!fichier.is_open()) {
@@ -13,7 +12,7 @@ Triangle * ChargeurTriangle::chargerForme(const string& nomFichier) const {
 
 	fichier >> contenu;
 
-	if (contenu.substr(0, 8) == "Triangle"){
+	if (contenu.substr(0, 8) == "Triangle") {
 		stringstream ss(contenu);
 		string token;
 		int i = 0;
