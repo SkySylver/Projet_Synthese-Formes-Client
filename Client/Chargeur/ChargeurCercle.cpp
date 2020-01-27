@@ -16,11 +16,11 @@ Cercle * ChargeurCercle::chargerForme(const string& nomFichier) const {
 	fichier >> contenu;
 
 	if (contenu.substr(0, 6) == "Cercle"){
-		contenu.replace(contenu.begin(), contenu.end(), ',', ' ');
 		stringstream ss(contenu);
-
-		while (ss.good() && i < 5) {
-			ss >> arr[i];
+		string token;
+		int i = 0;
+		while (getline(ss, token, ',')) {
+			arr[i] = token;
 			i++;
 		}
 		Vecteur2D centre(stod(arr[2]), stod(arr[3]));
