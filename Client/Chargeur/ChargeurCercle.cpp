@@ -8,7 +8,7 @@ Cercle * ChargeurCercle::chargerForme(const string& nomFichier) const {
 
 	fichier.open(nomFichier.c_str(), fstream::in);
 
-	if (fichier.is_open()) {
+	if (!fichier.is_open()) {
 		fichier.close();
 		return NULL;
 	}
